@@ -1,0 +1,1 @@
+/usr/local/opt/llvm/bin/clang++ -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -bundle -Wl,-headerpad_max_install_names  -o cosmology.cpython-36m-darwin.so CMakeFiles/cosmology.dir/haliax/cosmology.cpp.o -undefined dynamic_lookup -flto 

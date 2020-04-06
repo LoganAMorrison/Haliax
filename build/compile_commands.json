@@ -1,0 +1,57 @@
+[
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build",
+  "command": "/usr/bin/clang++  -Ddm_models_EXPORTS -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/usr/local/include -I/Users/loganmorrison/Desktop/Haliax/pybind11/include -I/Users/loganmorrison/.pyenv/versions/3.6.2/include/python3.6m -I/include -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fPIC -fvisibility=hidden   -std=c++14 -o CMakeFiles/dm_models.dir/haliax/dm_models.cpp.o -c /Users/loganmorrison/Desktop/Haliax/haliax/dm_models.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/haliax/dm_models.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build",
+  "command": "/usr/bin/clang++  -Dcosmology_EXPORTS -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/usr/local/include -I/Users/loganmorrison/Desktop/Haliax/pybind11/include -I/Users/loganmorrison/.pyenv/versions/3.6.2/include/python3.6m -I/include -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -fPIC -fvisibility=hidden   -std=c++14 -o CMakeFiles/cosmology.dir/haliax/cosmology.cpp.o -c /Users/loganmorrison/Desktop/Haliax/haliax/cosmology.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/haliax/cosmology.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++11 -o CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_kinetic_mixing.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/lanre/test/test_kinetic_mixing.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++11 -o CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_higgs_portal.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/lanre/test/test_higgs_portal.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++11 -o CMakeFiles/test_dual.dir/test_dual.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_dual.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/lanre/test/test_dual.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++11 -o CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_diffeq_non_stiff.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/lanre/test/test_diffeq_non_stiff.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest -isystem /usr/local/include/eigen3  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++11 -o CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_diffeq_stiff.cpp",
+  "file": "/Users/loganmorrison/Desktop/Haliax/lanre/test/test_diffeq_stiff.cpp"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-build/googlemock",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++11 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-build/googlemock",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++11 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-build/googletest",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++11 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-build/googletest",
+  "command": "/usr/bin/clang++   -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/include -I/usr/local/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/include -I/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++11 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/loganmorrison/Desktop/Haliax/build/lanre/test/googletest-src/googletest/src/gtest-all.cc"
+}
+]

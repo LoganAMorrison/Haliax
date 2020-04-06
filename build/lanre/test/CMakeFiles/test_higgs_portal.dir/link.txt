@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.o  -o ../../../bin/test_higgs_portal ../../lib/libgtest_maind.a ../../lib/libgtestd.a 

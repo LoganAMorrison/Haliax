@@ -1,0 +1,1 @@
+from lanre.models import HiggsPortal

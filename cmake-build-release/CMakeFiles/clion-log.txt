@@ -1,0 +1,18 @@
+"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/local/opt/llvm/bin/clang++ -G "CodeBlocks - Unix Makefiles" /Users/loganmorrison/Desktop/Haliax
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-download
+[ 11%] Performing update step for 'googletest'
+Current branch master is up to date.
+[ 22%] No configure step for 'googletest'
+[ 33%] No build step for 'googletest'
+[ 44%] No install step for 'googletest'
+[ 55%] No test step for 'googletest'
+[ 66%] Completed 'googletest'
+[100%] Built target googletest
+-- Found PythonInterp: /Users/loganmorrison/.pyenv/versions/3.6.2/bin/python (found version "3.6.2") 
+-- Found PythonInterp: /Users/loganmorrison/.pyenv/shims/python (found version "3.6.2") 
+-- pybind11 v2.3.dev1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/loganmorrison/Desktop/Haliax/cmake-build-release

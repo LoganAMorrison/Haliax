@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="gmock"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.72.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.72.0\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\eigen3\;CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\;CMake Files\lanre\;CMake Files\lanre\include\;CMake Files\lanre\include\lanre\;CMake Files\lanre\test\;CMake Files\cmake-build-release\;CMake Files\cmake-build-release\lanre\;CMake Files\cmake-build-release\lanre\test\;CMake Files\cmake-build-release\lanre\test\googletest-src\;CMake Files\cmake-build-release\lanre\test\googletest-src\googlemock\;CMake Files\cmake-build-release\lanre\test\googletest-src\googlemock\cmake\;CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\;CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\cmake\;CMake Files\pybind11\;CMake Files\pybind11\tools\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/lanre/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include"/>
+					<Add directory="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="."/>
+					<Add directory="/Users/loganmorrison/.pyenv/versions/3.6.2/include"/>
+					<Add directory="/usr/local/opt/llvm/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j16 -f &quot;/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc">
+			<Option target="gmock"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/lib/cmake/Boost-1.72.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.72.0\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/lib/cmake/Boost-1.72.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\Boost-1.72.0\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/lib/cmake/boost_headers-1.72.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.72.0\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/lib/cmake/boost_headers-1.72.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\boost_headers-1.72.0\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/share/eigen3/cmake/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/../../../../usr/local/share/eigen3/cmake/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/lanre/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lanre\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/lanre/include/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lanre\include\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/lanre/include/lanre/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lanre\include\lanre\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/lanre/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lanre\test\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/lanre/test/CMakeLists.txt.in">
+			<Option virtualFolder="CMake Files\lanre\test\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googlemock\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-release\lanre\test\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\pybind11\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/pybind11/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/Users/loganmorrison/Desktop/Haliax/pybind11/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
