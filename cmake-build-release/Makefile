@@ -51,10 +51,10 @@ RM = "/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CL
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loganmorrison/Desktop/Haliax
+CMAKE_SOURCE_DIR = /Users/loganmorrison/Documents/git_hub/Haliax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loganmorrison/Desktop/Haliax/cmake-build-release
+CMAKE_BINARY_DIR = /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -129,9 +129,9 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles /Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -210,6 +210,32 @@ cosmology: cmake_check_build_system
 cosmology/fast:
 	$(MAKE) -f CMakeFiles/cosmology.dir/build.make CMakeFiles/cosmology.dir/build
 .PHONY : cosmology/fast
+
+#=============================================================================
+# Target rules for targets named test_roots_bracket
+
+# Build rule for target.
+test_roots_bracket: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_roots_bracket
+.PHONY : test_roots_bracket
+
+# fast build rule for target.
+test_roots_bracket/fast:
+	$(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/build
+.PHONY : test_roots_bracket/fast
+
+#=============================================================================
+# Target rules for targets named test_optimize_hybrj
+
+# Build rule for target.
+test_optimize_hybrj: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_optimize_hybrj
+.PHONY : test_optimize_hybrj
+
+# fast build rule for target.
+test_optimize_hybrj/fast:
+	$(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/build
+.PHONY : test_optimize_hybrj/fast
 
 #=============================================================================
 # Target rules for targets named test_cosmology_standard_model
@@ -303,19 +329,6 @@ test_phase_space_rambo/fast:
 .PHONY : test_phase_space_rambo/fast
 
 #=============================================================================
-# Target rules for targets named test_roots_bracket
-
-# Build rule for target.
-test_roots_bracket: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_roots_bracket
-.PHONY : test_roots_bracket
-
-# fast build rule for target.
-test_roots_bracket/fast:
-	$(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/build
-.PHONY : test_roots_bracket/fast
-
-#=============================================================================
 # Target rules for targets named test_diffeq_stiff
 
 # Build rule for target.
@@ -353,6 +366,19 @@ test_cosmology_thermodynamic_particle: cmake_check_build_system
 test_cosmology_thermodynamic_particle/fast:
 	$(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build
 .PHONY : test_cosmology_thermodynamic_particle/fast
+
+#=============================================================================
+# Target rules for targets named test_optimize_hybrd
+
+# Build rule for target.
+test_optimize_hybrd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_optimize_hybrd
+.PHONY : test_optimize_hybrd
+
+# fast build rule for target.
+test_optimize_hybrd/fast:
+	$(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrd.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrd.dir/build
+.PHONY : test_optimize_hybrd/fast
 
 #=============================================================================
 # Target rules for targets named test_special_functions_besselk
@@ -634,6 +660,8 @@ help:
 	@echo "... diffeq"
 	@echo "... dm_models"
 	@echo "... cosmology"
+	@echo "... test_roots_bracket"
+	@echo "... test_optimize_hybrj"
 	@echo "... test_cosmology_standard_model"
 	@echo "... test_dm_models_compute_xi"
 	@echo "... test_gamma_ray_spectra_neutral_pion"
@@ -641,10 +669,10 @@ help:
 	@echo "... test_diffeq_non_stiff"
 	@echo "... test_integrate_qags"
 	@echo "... test_phase_space_rambo"
-	@echo "... test_roots_bracket"
 	@echo "... test_diffeq_stiff"
 	@echo "... test_integrate_vegas"
 	@echo "... test_cosmology_thermodynamic_particle"
+	@echo "... test_optimize_hybrd"
 	@echo "... test_special_functions_besselk"
 	@echo "... test_special_functions_lambertw"
 	@echo "... test_dual"

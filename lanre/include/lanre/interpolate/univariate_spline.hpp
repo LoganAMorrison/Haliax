@@ -64,8 +64,10 @@ private:
     int m_nest; // size of t, c, fpint, z
     int m_k1; // width of a and q
     int m_k2; // width of b and g
-    std::vector<double> m_t;
-    std::vector<double> m_c;
+    std::vector<double> m_t; // knot locations
+    std::vector<double> m_c; // spline coefficients
+
+    // working arrays for curfit
     double *m_fpint;
     double *m_z;
     double **m_a;

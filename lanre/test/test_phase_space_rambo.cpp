@@ -4,7 +4,6 @@
 
 #include "lanre/phase_space/rambo.hpp"
 #include "lanre/constants.hpp"
-#include <boost/math/special_functions/pow.hpp>
 #include <iostream>
 #include "gtest/gtest.h"
 
@@ -12,7 +11,6 @@ using namespace lanre;
 using namespace lanre::phase_space;
 
 double mat_squared_mu_to_e_nu_nu(const std::vector<FourVector> &momenta) {
-    using namespace boost::math;
     double s = scalar_product(momenta[1] + momenta[2], momenta[1] + momenta[2]);
     double t = scalar_product(momenta[0] + momenta[2], momenta[0] + momenta[2]);
     return -16 * kG_FERMI * kG_FERMI * (s + t) * (s + t - kMUON_MASS * kMUON_MASS);
@@ -63,7 +61,6 @@ TEST(TestRambo, TestMomentumConservationAndMasses) {
  * SM Higgs boson.
  */
 TEST(TestRambo, TestTopQuarkAnnihilationHiggs) {
-    using namespace boost::math;
 
     double Q = 10.0 * kTOP_QUARK_MASS;
     std::vector<double> isp_masses = {kTOP_QUARK_MASS, kTOP_QUARK_MASS};
@@ -98,7 +95,6 @@ TEST(TestRambo, TestTopQuarkAnnihilationHiggs) {
  * Check 1->3 proccess with of muon decay into an electron and two neutrinos.
  */
 TEST(TestRambo, TestMuonDecay) {
-    using namespace boost::math;
 
     std::vector<double> isp_masses = {kMUON_MASS};
     std::vector<double> fsp_masses = {kELECTRON_MASS, 0.0, 0.0};
@@ -112,4 +108,3 @@ TEST(TestRambo, TestMuonDecay) {
 
     ASSERT_NEAR(std::get<0>(res), width, 3.0 * std::get<1>(res));
 }
-

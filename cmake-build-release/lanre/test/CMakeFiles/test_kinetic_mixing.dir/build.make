@@ -46,10 +46,10 @@ RM = "/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CL
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loganmorrison/Desktop/Haliax
+CMAKE_SOURCE_DIR = /Users/loganmorrison/Documents/git_hub/Haliax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loganmorrison/Desktop/Haliax/cmake-build-release
+CMAKE_BINARY_DIR = /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release
 
 # Include any dependencies generated for this target.
 include lanre/test/CMakeFiles/test_kinetic_mixing.dir/depend.make
@@ -62,16 +62,16 @@ include lanre/test/CMakeFiles/test_kinetic_mixing.dir/flags.make
 
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o: lanre/test/CMakeFiles/test_kinetic_mixing.dir/flags.make
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o: ../lanre/test/test_kinetic_mixing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o -c /Users/loganmorrison/Desktop/Haliax/lanre/test/test_kinetic_mixing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o"
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o -c /Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_kinetic_mixing.cpp
 
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loganmorrison/Desktop/Haliax/lanre/test/test_kinetic_mixing.cpp > CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_kinetic_mixing.cpp > CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i
 
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loganmorrison/Desktop/Haliax/lanre/test/test_kinetic_mixing.cpp -o CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_kinetic_mixing.cpp -o CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s
 
 # Object files for target test_kinetic_mixing
 test_kinetic_mixing_OBJECTS = \
@@ -85,8 +85,8 @@ test_kinetic_mixing_EXTERNAL_OBJECTS =
 ../bin/test_kinetic_mixing: lib/libgtest_main.a
 ../bin/test_kinetic_mixing: lib/libgtest.a
 ../bin/test_kinetic_mixing: lanre/test/CMakeFiles/test_kinetic_mixing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../bin/test_kinetic_mixing"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_kinetic_mixing.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../bin/test_kinetic_mixing"
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_kinetic_mixing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/build: ../bin/test_kinetic_mixing
@@ -94,10 +94,10 @@ lanre/test/CMakeFiles/test_kinetic_mixing.dir/build: ../bin/test_kinetic_mixing
 .PHONY : lanre/test/CMakeFiles/test_kinetic_mixing.dir/build
 
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/clean:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test && $(CMAKE_COMMAND) -P CMakeFiles/test_kinetic_mixing.dir/cmake_clean.cmake
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test && $(CMAKE_COMMAND) -P CMakeFiles/test_kinetic_mixing.dir/cmake_clean.cmake
 .PHONY : lanre/test/CMakeFiles/test_kinetic_mixing.dir/clean
 
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/depend:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loganmorrison/Desktop/Haliax /Users/loganmorrison/Desktop/Haliax/lanre/test /Users/loganmorrison/Desktop/Haliax/cmake-build-release /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_kinetic_mixing.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loganmorrison/Documents/git_hub/Haliax /Users/loganmorrison/Documents/git_hub/Haliax/lanre/test /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_kinetic_mixing.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lanre/test/CMakeFiles/test_kinetic_mixing.dir/depend
 

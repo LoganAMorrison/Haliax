@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest_main.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest_main.cc
 cstdio
 -
 gtest/gtest.h
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest/gtest.h
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest/gtest.h
 
 lanre/test/googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h
@@ -248,6 +248,8 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+cerrno
 -
 cstdint
 -

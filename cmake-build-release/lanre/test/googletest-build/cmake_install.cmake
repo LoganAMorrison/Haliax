@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src
+# Install script for directory: /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

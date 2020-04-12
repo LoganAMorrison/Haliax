@@ -34,3 +34,26 @@ TEST(TestDecaySpectra, TestMuonSpectrum) {
         std::cout << "(e, dNdE) = (" << egam_mev << ", " << dnde_mev << ")" << std::endl;
     }
 }
+
+
+TEST(TestDecaySpectra, TestChargePionSpectrum) {
+    double epi = 2.0 * kCHARGED_PION_MASS;
+    double logepi = log10(epi);
+    size_t num_gams = 100;
+    std::pair<double, double> loginterval{logepi - 3, logepi};
+    double step = (loginterval.second - loginterval.first) / double(num_gams - 1);
+
+    std::vector<double> egams(num_gams, 0.0);
+    for (size_t i = 0; i < egams.size(); i++) {
+        egams[i] = pow(10.0, i * step + loginterval.first);
+    }
+
+    auto spectrum = decay_spectrum_charged_pion(egams, epi, "total");
+
+    for (size_t i = 0; i < egams.size(); i++) {
+        double egam_mev = egams[i] * 1e3;
+        double dnde_mev = spectrum[i] * 1e-3;
+
+        std::cout << "(e, dNdE) = (" << egam_mev << ", " << dnde_mev << ")" << std::endl;
+    }
+}

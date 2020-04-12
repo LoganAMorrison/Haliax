@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest-all.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest-all.cc
 gtest/gtest.h
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest/gtest.h
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/gtest/gtest.h
 src/gtest.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest.cc
 src/gtest-death-test.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-death-test.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-death-test.cc
 src/gtest-filepath.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-filepath.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-filepath.cc
 src/gtest-matchers.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-matchers.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-matchers.cc
 src/gtest-port.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-port.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-port.cc
 src/gtest-printers.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-printers.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-printers.cc
 src/gtest-test-part.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-test-part.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-test-part.cc
 src/gtest-typed-test.cc
-/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-typed-test.cc
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/src/src/gtest-typed-test.cc
 
 lanre/test/googletest-src/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h
@@ -268,6 +268,8 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+cerrno
 -
 cstdint
 -

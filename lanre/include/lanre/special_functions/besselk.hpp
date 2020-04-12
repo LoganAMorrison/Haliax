@@ -204,11 +204,41 @@ double besselk1e(double x) {
 }
 
 /**
+ * Compute the modified bessel function of the second kind of order 2.
+ */
+double besselk2(double x) {
+    return 2 / x * besselk1(x) + besselk0(x);
+}
+
+/**
+ * Compute the modified bessel function of the second kind of order 2 scaled by
+ * exp(x).
+ */
+double besselk2e(double x) {
+    return 2 / x * besselk1e(x) + besselk0e(x);
+}
+
+/**
+ * Compute the modified bessel function of the second kind of order 3.
+ */
+double besselk3(double x) {
+    return (4.0 * x * besselk0(x) + (8.0 + x * x) * besselk1(x)) / (x * x);
+}
+
+/**
+ * Compute the modified bessel function of the second kind of order 3 scaled by
+ * exp(x).
+ */
+double besselk3e(double x) {
+    return (4.0 * x * besselk0e(x) + (8.0 + x * x) * besselk1e(x)) / (x * x);
+}
+
+/**
  * Compute the modified bessel function of the second kind of order n.
  */
 double besselkn(int nn, double x) {
     static const double EPS = std::numeric_limits<double>::epsilon();
-    static const double DBL_MAX = std::numeric_limits<double>::max();
+    static const double DMAX = std::numeric_limits<double>::max();
     static const double MAXLOG = 7.09782712893383996732e2;
 
     double k, kf, nk1f, nkf, zn, t, s, z0, z;
@@ -273,17 +303,17 @@ double besselkn(int nn, double x) {
                 zn *= z;
                 t = nk1f * zn / kf;
                 s += t;
-                if ((DBL_MAX - fabs(t)) < fabs(s))
+                if ((DMAX - fabs(t)) < fabs(s))
                     goto overf;
-                if ((tox > 1.0) && ((DBL_MAX / tox) < zmn))
+                if ((tox > 1.0) && ((DMAX / tox) < zmn))
                     goto overf;
                 zmn *= tox;
             }
             s *= 0.5;
             t = fabs(s);
-            if ((zmn > 1.0) && ((DBL_MAX / zmn) < t))
+            if ((zmn > 1.0) && ((DMAX / zmn) < t))
                 goto overf;
-            if ((t > 1.0) && ((DBL_MAX / t) < zmn))
+            if ((t > 1.0) && ((DMAX / t) < zmn))
                 goto overf;
             ans = s * zmn;
         }
@@ -361,7 +391,7 @@ double besselkn(int nn, double x) {
  */
 double besselkne(int nn, double x) {
     static const double EPS = std::numeric_limits<double>::epsilon();
-    static const double DBL_MAX = std::numeric_limits<double>::max();
+    static const double DMAX = std::numeric_limits<double>::max();
     static const double MAXLOG = 7.09782712893383996732e2;
 
     double k, kf, nk1f, nkf, zn, t, s, z0, z;
@@ -426,17 +456,17 @@ double besselkne(int nn, double x) {
                 zn *= z;
                 t = nk1f * zn / kf;
                 s += t;
-                if ((DBL_MAX - fabs(t)) < fabs(s))
+                if ((DMAX - fabs(t)) < fabs(s))
                     goto overf;
-                if ((tox > 1.0) && ((DBL_MAX / tox) < zmn))
+                if ((tox > 1.0) && ((DMAX / tox) < zmn))
                     goto overf;
                 zmn *= tox;
             }
             s *= 0.5;
             t = fabs(s);
-            if ((zmn > 1.0) && ((DBL_MAX / zmn) < t))
+            if ((zmn > 1.0) && ((DMAX / zmn) < t))
                 goto overf;
-            if ((t > 1.0) && ((DBL_MAX / t) < zmn))
+            if ((t > 1.0) && ((DMAX / t) < zmn))
                 goto overf;
             ans = s * zmn;
         }
@@ -507,7 +537,6 @@ double besselkne(int nn, double x) {
     ans = sqrt(M_PI / (2.0 * x)) * s;
     return (ans);
 }
-
 
 
 }

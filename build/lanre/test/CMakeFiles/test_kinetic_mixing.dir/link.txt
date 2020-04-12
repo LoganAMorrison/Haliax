@@ -1,1 +1,0 @@
-/usr/bin/clang++  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o  -o ../../../bin/test_kinetic_mixing ../../lib/libgtest_maind.a ../../lib/libgtestd.a 

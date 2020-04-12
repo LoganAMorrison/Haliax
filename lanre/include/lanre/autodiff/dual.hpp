@@ -869,52 +869,108 @@ public:
     friend Dual<T> besselk0(const Dual<T> &z) {
         using special_functions::besselk1;
         using special_functions::besselk0;
-        return autodiff::Dual<T>(besselk0(z.val), -z.eps * besselk1(z.val));
+
+        const double x = z.val;
+
+        const double k0 = besselk0(x);
+        const double k1 = besselk1(x);
+
+        return autodiff::Dual<T>(k0, -z.eps * k1);
     }
 
     friend Dual<T> besselk0e(const Dual<T> &z) {
         using special_functions::besselk1e;
         using special_functions::besselk0e;
         const double x = z.val;
-        return autodiff::Dual<T>(besselk0e(x), besselk0e(x) - besselk1e(x));
+
+        const double k0e = besselk0e(x);
+        const double k1e = besselk1e(x);
+
+        return autodiff::Dual<T>(k0e, k0e - k1e);
     }
 
     friend Dual<T> besselk1(const Dual<T> &z) {
         using special_functions::besselk1;
         using special_functions::besselk0;
         const double x = z.val;
-        return autodiff::Dual<T>(
-                besselk1(x),
-                -z.eps / x * (x * besselk0(x) + besselk1(x))
-        );
+
+        const double k0 = besselk0(x);
+        const double k1 = besselk1(x);
+
+        return autodiff::Dual<T>(k1, -z.eps / x * (x * k0 + k1));
     }
 
     friend Dual<T> besselk1e(const Dual<T> &z) {
         using special_functions::besselk1e;
         using special_functions::besselk0e;
         const double x = z.val;
-        return autodiff::Dual<T>(
-                besselk1e(x),
-                z.eps * (-besselk0e(x) + (x - 1.0) / x * besselk1e(x))
-        );
+
+        const double k0e = besselk0e(x);
+        const double k1e = besselk1e(x);
+
+        return autodiff::Dual<T>(k1e, -z.eps * (k0e + (1.0 - x) / x * k1e));
+    }
+
+    friend Dual<T> besselk2(const Dual<T> &z) {
+        using special_functions::besselk1;
+        using special_functions::besselk2;
+        const double x = z.val;
+
+        const double k1 = besselk1(x);
+        const double k2 = besselk2(x);
+
+        return autodiff::Dual<T>(k2, -z.eps * (k1 + 2.0 / x * k2));
+    }
+
+    friend Dual<T> besselk2e(const Dual<T> &z) {
+        using special_functions::besselk1e;
+        using special_functions::besselk2e;
+        const double x = z.val;
+
+        const double k1e = besselk1e(x);
+        const double k2e = besselk2e(x);
+
+        return autodiff::Dual<T>(k2e, -z.eps * (k1e + (2.0 - x) / x * k2e));
+    }
+
+    friend Dual<T> besselk3(const Dual<T> &z) {
+        using special_functions::besselk2;
+        using special_functions::besselk3;
+        const double x = z.val;
+
+        const double k2 = besselk2(x);
+        const double k3 = besselk3(x);
+
+        return autodiff::Dual<T>(k3, -z.eps * (k2 + 3.0 / x * k3));
+    }
+
+    friend Dual<T> besselk3e(const Dual<T> &z) {
+        using special_functions::besselk2e;
+        using special_functions::besselk3e;
+        const double x = z.val;
+
+        const double k2e = besselk2e(x);
+        const double k3e = besselk3e(x);
+
+        return autodiff::Dual<T>(k3e, -z.eps * (k2e + (3.0 - x) / x * k3e));
     }
 
     friend Dual<T> besselkn(int n, const Dual<T> &z) {
         using special_functions::besselkn;
         const double x = z.val;
-        return autodiff::Dual<T>(
-                besselkn(n, x),
-                -z.eps / x * (x * besselkn(n - 1, x) + n * besselkn(n, x))
-        );
+        const double kn = besselkn(n, x);
+        const double knm1 = besselkn(n - 1, x);
+
+        return autodiff::Dual<T>(kn, -z.eps / x * (x * knm1 + n * kn));
     }
 
     friend Dual<T> besselkne(int n, const Dual<T> &z) {
         using special_functions::besselkne;
         const double x = z.val;
-        return autodiff::Dual<T>(
-                besselkne(n, x),
-                z.eps * ((n + x) * besselkne(n, x) / x - besselkne(1 + n, x))
-        );
+        const double kne = besselkne(n, x);
+        const double knm1e = besselkne(n - 1, x);
+
+        return autodiff::Dual<T>(kne, -z.eps * ((n - x) * kne / x + knm1e));
     }
 };
 

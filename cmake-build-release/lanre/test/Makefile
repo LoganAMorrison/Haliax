@@ -51,10 +51,10 @@ RM = "/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CL
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loganmorrison/Desktop/Haliax
+CMAKE_SOURCE_DIR = /Users/loganmorrison/Documents/git_hub/Haliax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loganmorrison/Desktop/Haliax/cmake-build-release
+CMAKE_BINARY_DIR = /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,18 +70,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -103,6 +91,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -129,14 +129,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/CMakeFiles/progress.marks
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles 0
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/progress.marks
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/clean
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/clean
 .PHONY : clean
 
 # The main clean target
@@ -146,127 +146,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/preinstall
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/preinstall
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
-
-# Convenience name for target.
-test_cosmology_standard_model: lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
-
-.PHONY : test_cosmology_standard_model
-
-# fast build rule for target.
-test_cosmology_standard_model/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build
-.PHONY : test_cosmology_standard_model/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
-
-# Convenience name for target.
-test_dm_models_compute_xi: lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
-
-.PHONY : test_dm_models_compute_xi
-
-# fast build rule for target.
-test_dm_models_compute_xi/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build
-.PHONY : test_dm_models_compute_xi/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
-
-# Convenience name for target.
-test_gamma_ray_spectra_neutral_pion: lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
-
-.PHONY : test_gamma_ray_spectra_neutral_pion
-
-# fast build rule for target.
-test_gamma_ray_spectra_neutral_pion/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build
-.PHONY : test_gamma_ray_spectra_neutral_pion/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
-
-# Convenience name for target.
-test_interpolate_univariate_spline: lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
-
-.PHONY : test_interpolate_univariate_spline
-
-# fast build rule for target.
-test_interpolate_univariate_spline/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build
-.PHONY : test_interpolate_univariate_spline/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
-
-# Convenience name for target.
-test_diffeq_non_stiff: lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
-
-.PHONY : test_diffeq_non_stiff
-
-# fast build rule for target.
-test_diffeq_non_stiff/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build
-.PHONY : test_diffeq_non_stiff/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_integrate_qags.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_integrate_qags.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_integrate_qags.dir/rule
-
-# Convenience name for target.
-test_integrate_qags: lanre/test/CMakeFiles/test_integrate_qags.dir/rule
-
-.PHONY : test_integrate_qags
-
-# fast build rule for target.
-test_integrate_qags/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/build
-.PHONY : test_integrate_qags/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
-
-# Convenience name for target.
-test_phase_space_rambo: lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
-
-.PHONY : test_phase_space_rambo
-
-# fast build rule for target.
-test_phase_space_rambo/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/build
-.PHONY : test_phase_space_rambo/fast
-
-# Convenience name for target.
 lanre/test/CMakeFiles/test_roots_bracket.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_roots_bracket.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_roots_bracket.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_roots_bracket.dir/rule
 
 # Convenience name for target.
@@ -276,12 +171,132 @@ test_roots_bracket: lanre/test/CMakeFiles/test_roots_bracket.dir/rule
 
 # fast build rule for target.
 test_roots_bracket/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/build
 .PHONY : test_roots_bracket/fast
 
 # Convenience name for target.
+lanre/test/CMakeFiles/test_optimize_hybrj.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_optimize_hybrj.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_optimize_hybrj.dir/rule
+
+# Convenience name for target.
+test_optimize_hybrj: lanre/test/CMakeFiles/test_optimize_hybrj.dir/rule
+
+.PHONY : test_optimize_hybrj
+
+# fast build rule for target.
+test_optimize_hybrj/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/build
+.PHONY : test_optimize_hybrj/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
+
+# Convenience name for target.
+test_cosmology_standard_model: lanre/test/CMakeFiles/test_cosmology_standard_model.dir/rule
+
+.PHONY : test_cosmology_standard_model
+
+# fast build rule for target.
+test_cosmology_standard_model/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build
+.PHONY : test_cosmology_standard_model/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
+
+# Convenience name for target.
+test_dm_models_compute_xi: lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/rule
+
+.PHONY : test_dm_models_compute_xi
+
+# fast build rule for target.
+test_dm_models_compute_xi/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build
+.PHONY : test_dm_models_compute_xi/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
+
+# Convenience name for target.
+test_gamma_ray_spectra_neutral_pion: lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/rule
+
+.PHONY : test_gamma_ray_spectra_neutral_pion
+
+# fast build rule for target.
+test_gamma_ray_spectra_neutral_pion/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build
+.PHONY : test_gamma_ray_spectra_neutral_pion/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
+
+# Convenience name for target.
+test_interpolate_univariate_spline: lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/rule
+
+.PHONY : test_interpolate_univariate_spline
+
+# fast build rule for target.
+test_interpolate_univariate_spline/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build
+.PHONY : test_interpolate_univariate_spline/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
+
+# Convenience name for target.
+test_diffeq_non_stiff: lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule
+
+.PHONY : test_diffeq_non_stiff
+
+# fast build rule for target.
+test_diffeq_non_stiff/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build
+.PHONY : test_diffeq_non_stiff/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_integrate_qags.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_integrate_qags.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_integrate_qags.dir/rule
+
+# Convenience name for target.
+test_integrate_qags: lanre/test/CMakeFiles/test_integrate_qags.dir/rule
+
+.PHONY : test_integrate_qags
+
+# fast build rule for target.
+test_integrate_qags/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/build
+.PHONY : test_integrate_qags/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
+
+# Convenience name for target.
+test_phase_space_rambo: lanre/test/CMakeFiles/test_phase_space_rambo.dir/rule
+
+.PHONY : test_phase_space_rambo
+
+# fast build rule for target.
+test_phase_space_rambo/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/build
+.PHONY : test_phase_space_rambo/fast
+
+# Convenience name for target.
 lanre/test/CMakeFiles/test_diffeq_stiff.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_diffeq_stiff.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_diffeq_stiff.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_diffeq_stiff.dir/rule
 
 # Convenience name for target.
@@ -291,12 +306,12 @@ test_diffeq_stiff: lanre/test/CMakeFiles/test_diffeq_stiff.dir/rule
 
 # fast build rule for target.
 test_diffeq_stiff/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/build
 .PHONY : test_diffeq_stiff/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_integrate_vegas.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_integrate_vegas.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_integrate_vegas.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_integrate_vegas.dir/rule
 
 # Convenience name for target.
@@ -306,12 +321,12 @@ test_integrate_vegas: lanre/test/CMakeFiles/test_integrate_vegas.dir/rule
 
 # fast build rule for target.
 test_integrate_vegas/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/build
 .PHONY : test_integrate_vegas/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/rule
 
 # Convenience name for target.
@@ -321,12 +336,27 @@ test_cosmology_thermodynamic_particle: lanre/test/CMakeFiles/test_cosmology_ther
 
 # fast build rule for target.
 test_cosmology_thermodynamic_particle/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build
 .PHONY : test_cosmology_thermodynamic_particle/fast
 
 # Convenience name for target.
+lanre/test/CMakeFiles/test_optimize_hybrd.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_optimize_hybrd.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_optimize_hybrd.dir/rule
+
+# Convenience name for target.
+test_optimize_hybrd: lanre/test/CMakeFiles/test_optimize_hybrd.dir/rule
+
+.PHONY : test_optimize_hybrd
+
+# fast build rule for target.
+test_optimize_hybrd/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrd.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrd.dir/build
+.PHONY : test_optimize_hybrd/fast
+
+# Convenience name for target.
 lanre/test/CMakeFiles/test_special_functions_besselk.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_special_functions_besselk.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_special_functions_besselk.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_special_functions_besselk.dir/rule
 
 # Convenience name for target.
@@ -336,12 +366,12 @@ test_special_functions_besselk: lanre/test/CMakeFiles/test_special_functions_bes
 
 # fast build rule for target.
 test_special_functions_besselk/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/build
 .PHONY : test_special_functions_besselk/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_special_functions_lambertw.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_special_functions_lambertw.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_special_functions_lambertw.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_special_functions_lambertw.dir/rule
 
 # Convenience name for target.
@@ -351,12 +381,12 @@ test_special_functions_lambertw: lanre/test/CMakeFiles/test_special_functions_la
 
 # fast build rule for target.
 test_special_functions_lambertw/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build
 .PHONY : test_special_functions_lambertw/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_dual.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dual.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dual.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_dual.dir/rule
 
 # Convenience name for target.
@@ -366,12 +396,12 @@ test_dual: lanre/test/CMakeFiles/test_dual.dir/rule
 
 # fast build rule for target.
 test_dual/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/build
 .PHONY : test_dual/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/rule
 
 # Convenience name for target.
@@ -381,12 +411,12 @@ test_dm_models_dipole_dm: lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/rul
 
 # fast build rule for target.
 test_dm_models_dipole_dm/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build
 .PHONY : test_dm_models_dipole_dm/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_dm_models_darksun.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_darksun.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_darksun.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_dm_models_darksun.dir/rule
 
 # Convenience name for target.
@@ -396,12 +426,12 @@ test_dm_models_darksun: lanre/test/CMakeFiles/test_dm_models_darksun.dir/rule
 
 # fast build rule for target.
 test_dm_models_darksun/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/build
 .PHONY : test_dm_models_darksun/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/rule
 
 # Convenience name for target.
@@ -411,12 +441,12 @@ test_dm_models_constant_thermal_cross_section: lanre/test/CMakeFiles/test_dm_mod
 
 # fast build rule for target.
 test_dm_models_constant_thermal_cross_section/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build
 .PHONY : test_dm_models_constant_thermal_cross_section/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule
 
 # Convenience name for target.
@@ -426,12 +456,12 @@ test_kinetic_mixing: lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule
 
 # fast build rule for target.
 test_kinetic_mixing/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/build
 .PHONY : test_kinetic_mixing/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_higgs_portal.dir/rule:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_higgs_portal.dir/rule
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_higgs_portal.dir/rule
 .PHONY : lanre/test/CMakeFiles/test_higgs_portal.dir/rule
 
 # Convenience name for target.
@@ -441,7 +471,7 @@ test_higgs_portal: lanre/test/CMakeFiles/test_higgs_portal.dir/rule
 
 # fast build rule for target.
 test_higgs_portal/fast:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
 .PHONY : test_higgs_portal/fast
 
 test_cosmology_standard_model.o: test_cosmology_standard_model.cpp.o
@@ -450,7 +480,7 @@ test_cosmology_standard_model.o: test_cosmology_standard_model.cpp.o
 
 # target to build an object file
 test_cosmology_standard_model.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.o
 .PHONY : test_cosmology_standard_model.cpp.o
 
 test_cosmology_standard_model.i: test_cosmology_standard_model.cpp.i
@@ -459,7 +489,7 @@ test_cosmology_standard_model.i: test_cosmology_standard_model.cpp.i
 
 # target to preprocess a source file
 test_cosmology_standard_model.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.i
 .PHONY : test_cosmology_standard_model.cpp.i
 
 test_cosmology_standard_model.s: test_cosmology_standard_model.cpp.s
@@ -468,7 +498,7 @@ test_cosmology_standard_model.s: test_cosmology_standard_model.cpp.s
 
 # target to generate assembly for a file
 test_cosmology_standard_model.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_standard_model.dir/build.make lanre/test/CMakeFiles/test_cosmology_standard_model.dir/test_cosmology_standard_model.cpp.s
 .PHONY : test_cosmology_standard_model.cpp.s
 
 test_cosmology_thermodynamic_particle.o: test_cosmology_thermodynamic_particle.cpp.o
@@ -477,7 +507,7 @@ test_cosmology_thermodynamic_particle.o: test_cosmology_thermodynamic_particle.c
 
 # target to build an object file
 test_cosmology_thermodynamic_particle.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.o
 .PHONY : test_cosmology_thermodynamic_particle.cpp.o
 
 test_cosmology_thermodynamic_particle.i: test_cosmology_thermodynamic_particle.cpp.i
@@ -486,7 +516,7 @@ test_cosmology_thermodynamic_particle.i: test_cosmology_thermodynamic_particle.c
 
 # target to preprocess a source file
 test_cosmology_thermodynamic_particle.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.i
 .PHONY : test_cosmology_thermodynamic_particle.cpp.i
 
 test_cosmology_thermodynamic_particle.s: test_cosmology_thermodynamic_particle.cpp.s
@@ -495,7 +525,7 @@ test_cosmology_thermodynamic_particle.s: test_cosmology_thermodynamic_particle.c
 
 # target to generate assembly for a file
 test_cosmology_thermodynamic_particle.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/build.make lanre/test/CMakeFiles/test_cosmology_thermodynamic_particle.dir/test_cosmology_thermodynamic_particle.cpp.s
 .PHONY : test_cosmology_thermodynamic_particle.cpp.s
 
 test_diffeq_non_stiff.o: test_diffeq_non_stiff.cpp.o
@@ -504,7 +534,7 @@ test_diffeq_non_stiff.o: test_diffeq_non_stiff.cpp.o
 
 # target to build an object file
 test_diffeq_non_stiff.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.o
 .PHONY : test_diffeq_non_stiff.cpp.o
 
 test_diffeq_non_stiff.i: test_diffeq_non_stiff.cpp.i
@@ -513,7 +543,7 @@ test_diffeq_non_stiff.i: test_diffeq_non_stiff.cpp.i
 
 # target to preprocess a source file
 test_diffeq_non_stiff.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.i
 .PHONY : test_diffeq_non_stiff.cpp.i
 
 test_diffeq_non_stiff.s: test_diffeq_non_stiff.cpp.s
@@ -522,7 +552,7 @@ test_diffeq_non_stiff.s: test_diffeq_non_stiff.cpp.s
 
 # target to generate assembly for a file
 test_diffeq_non_stiff.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/test_diffeq_non_stiff.cpp.s
 .PHONY : test_diffeq_non_stiff.cpp.s
 
 test_diffeq_stiff.o: test_diffeq_stiff.cpp.o
@@ -531,7 +561,7 @@ test_diffeq_stiff.o: test_diffeq_stiff.cpp.o
 
 # target to build an object file
 test_diffeq_stiff.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.o
 .PHONY : test_diffeq_stiff.cpp.o
 
 test_diffeq_stiff.i: test_diffeq_stiff.cpp.i
@@ -540,7 +570,7 @@ test_diffeq_stiff.i: test_diffeq_stiff.cpp.i
 
 # target to preprocess a source file
 test_diffeq_stiff.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.i
 .PHONY : test_diffeq_stiff.cpp.i
 
 test_diffeq_stiff.s: test_diffeq_stiff.cpp.s
@@ -549,7 +579,7 @@ test_diffeq_stiff.s: test_diffeq_stiff.cpp.s
 
 # target to generate assembly for a file
 test_diffeq_stiff.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_diffeq_stiff.dir/build.make lanre/test/CMakeFiles/test_diffeq_stiff.dir/test_diffeq_stiff.cpp.s
 .PHONY : test_diffeq_stiff.cpp.s
 
 test_dm_models_compute_xi.o: test_dm_models_compute_xi.cpp.o
@@ -558,7 +588,7 @@ test_dm_models_compute_xi.o: test_dm_models_compute_xi.cpp.o
 
 # target to build an object file
 test_dm_models_compute_xi.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.o
 .PHONY : test_dm_models_compute_xi.cpp.o
 
 test_dm_models_compute_xi.i: test_dm_models_compute_xi.cpp.i
@@ -567,7 +597,7 @@ test_dm_models_compute_xi.i: test_dm_models_compute_xi.cpp.i
 
 # target to preprocess a source file
 test_dm_models_compute_xi.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.i
 .PHONY : test_dm_models_compute_xi.cpp.i
 
 test_dm_models_compute_xi.s: test_dm_models_compute_xi.cpp.s
@@ -576,7 +606,7 @@ test_dm_models_compute_xi.s: test_dm_models_compute_xi.cpp.s
 
 # target to generate assembly for a file
 test_dm_models_compute_xi.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/build.make lanre/test/CMakeFiles/test_dm_models_compute_xi.dir/test_dm_models_compute_xi.cpp.s
 .PHONY : test_dm_models_compute_xi.cpp.s
 
 test_dm_models_constant_thermal_cross_section.o: test_dm_models_constant_thermal_cross_section.cpp.o
@@ -585,7 +615,7 @@ test_dm_models_constant_thermal_cross_section.o: test_dm_models_constant_thermal
 
 # target to build an object file
 test_dm_models_constant_thermal_cross_section.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.o
 .PHONY : test_dm_models_constant_thermal_cross_section.cpp.o
 
 test_dm_models_constant_thermal_cross_section.i: test_dm_models_constant_thermal_cross_section.cpp.i
@@ -594,7 +624,7 @@ test_dm_models_constant_thermal_cross_section.i: test_dm_models_constant_thermal
 
 # target to preprocess a source file
 test_dm_models_constant_thermal_cross_section.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.i
 .PHONY : test_dm_models_constant_thermal_cross_section.cpp.i
 
 test_dm_models_constant_thermal_cross_section.s: test_dm_models_constant_thermal_cross_section.cpp.s
@@ -603,7 +633,7 @@ test_dm_models_constant_thermal_cross_section.s: test_dm_models_constant_thermal
 
 # target to generate assembly for a file
 test_dm_models_constant_thermal_cross_section.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/build.make lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir/test_dm_models_constant_thermal_cross_section.cpp.s
 .PHONY : test_dm_models_constant_thermal_cross_section.cpp.s
 
 test_dm_models_darksun.o: test_dm_models_darksun.cpp.o
@@ -612,7 +642,7 @@ test_dm_models_darksun.o: test_dm_models_darksun.cpp.o
 
 # target to build an object file
 test_dm_models_darksun.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.o
 .PHONY : test_dm_models_darksun.cpp.o
 
 test_dm_models_darksun.i: test_dm_models_darksun.cpp.i
@@ -621,7 +651,7 @@ test_dm_models_darksun.i: test_dm_models_darksun.cpp.i
 
 # target to preprocess a source file
 test_dm_models_darksun.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.i
 .PHONY : test_dm_models_darksun.cpp.i
 
 test_dm_models_darksun.s: test_dm_models_darksun.cpp.s
@@ -630,7 +660,7 @@ test_dm_models_darksun.s: test_dm_models_darksun.cpp.s
 
 # target to generate assembly for a file
 test_dm_models_darksun.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_darksun.dir/build.make lanre/test/CMakeFiles/test_dm_models_darksun.dir/test_dm_models_darksun.cpp.s
 .PHONY : test_dm_models_darksun.cpp.s
 
 test_dm_models_dipole_dm.o: test_dm_models_dipole_dm.cpp.o
@@ -639,7 +669,7 @@ test_dm_models_dipole_dm.o: test_dm_models_dipole_dm.cpp.o
 
 # target to build an object file
 test_dm_models_dipole_dm.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.o
 .PHONY : test_dm_models_dipole_dm.cpp.o
 
 test_dm_models_dipole_dm.i: test_dm_models_dipole_dm.cpp.i
@@ -648,7 +678,7 @@ test_dm_models_dipole_dm.i: test_dm_models_dipole_dm.cpp.i
 
 # target to preprocess a source file
 test_dm_models_dipole_dm.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.i
 .PHONY : test_dm_models_dipole_dm.cpp.i
 
 test_dm_models_dipole_dm.s: test_dm_models_dipole_dm.cpp.s
@@ -657,7 +687,7 @@ test_dm_models_dipole_dm.s: test_dm_models_dipole_dm.cpp.s
 
 # target to generate assembly for a file
 test_dm_models_dipole_dm.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/build.make lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir/test_dm_models_dipole_dm.cpp.s
 .PHONY : test_dm_models_dipole_dm.cpp.s
 
 test_dual.o: test_dual.cpp.o
@@ -666,7 +696,7 @@ test_dual.o: test_dual.cpp.o
 
 # target to build an object file
 test_dual.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.o
 .PHONY : test_dual.cpp.o
 
 test_dual.i: test_dual.cpp.i
@@ -675,7 +705,7 @@ test_dual.i: test_dual.cpp.i
 
 # target to preprocess a source file
 test_dual.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.i
 .PHONY : test_dual.cpp.i
 
 test_dual.s: test_dual.cpp.s
@@ -684,7 +714,7 @@ test_dual.s: test_dual.cpp.s
 
 # target to generate assembly for a file
 test_dual.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_dual.dir/build.make lanre/test/CMakeFiles/test_dual.dir/test_dual.cpp.s
 .PHONY : test_dual.cpp.s
 
 test_gamma_ray_spectra_neutral_pion.o: test_gamma_ray_spectra_neutral_pion.cpp.o
@@ -693,7 +723,7 @@ test_gamma_ray_spectra_neutral_pion.o: test_gamma_ray_spectra_neutral_pion.cpp.o
 
 # target to build an object file
 test_gamma_ray_spectra_neutral_pion.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.o
 .PHONY : test_gamma_ray_spectra_neutral_pion.cpp.o
 
 test_gamma_ray_spectra_neutral_pion.i: test_gamma_ray_spectra_neutral_pion.cpp.i
@@ -702,7 +732,7 @@ test_gamma_ray_spectra_neutral_pion.i: test_gamma_ray_spectra_neutral_pion.cpp.i
 
 # target to preprocess a source file
 test_gamma_ray_spectra_neutral_pion.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.i
 .PHONY : test_gamma_ray_spectra_neutral_pion.cpp.i
 
 test_gamma_ray_spectra_neutral_pion.s: test_gamma_ray_spectra_neutral_pion.cpp.s
@@ -711,7 +741,7 @@ test_gamma_ray_spectra_neutral_pion.s: test_gamma_ray_spectra_neutral_pion.cpp.s
 
 # target to generate assembly for a file
 test_gamma_ray_spectra_neutral_pion.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/build.make lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir/test_gamma_ray_spectra_neutral_pion.cpp.s
 .PHONY : test_gamma_ray_spectra_neutral_pion.cpp.s
 
 test_higgs_portal.o: test_higgs_portal.cpp.o
@@ -720,7 +750,7 @@ test_higgs_portal.o: test_higgs_portal.cpp.o
 
 # target to build an object file
 test_higgs_portal.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.o
 .PHONY : test_higgs_portal.cpp.o
 
 test_higgs_portal.i: test_higgs_portal.cpp.i
@@ -729,7 +759,7 @@ test_higgs_portal.i: test_higgs_portal.cpp.i
 
 # target to preprocess a source file
 test_higgs_portal.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.i
 .PHONY : test_higgs_portal.cpp.i
 
 test_higgs_portal.s: test_higgs_portal.cpp.s
@@ -738,7 +768,7 @@ test_higgs_portal.s: test_higgs_portal.cpp.s
 
 # target to generate assembly for a file
 test_higgs_portal.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.s
 .PHONY : test_higgs_portal.cpp.s
 
 test_integrate_qags.o: test_integrate_qags.cpp.o
@@ -747,7 +777,7 @@ test_integrate_qags.o: test_integrate_qags.cpp.o
 
 # target to build an object file
 test_integrate_qags.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.o
 .PHONY : test_integrate_qags.cpp.o
 
 test_integrate_qags.i: test_integrate_qags.cpp.i
@@ -756,7 +786,7 @@ test_integrate_qags.i: test_integrate_qags.cpp.i
 
 # target to preprocess a source file
 test_integrate_qags.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.i
 .PHONY : test_integrate_qags.cpp.i
 
 test_integrate_qags.s: test_integrate_qags.cpp.s
@@ -765,7 +795,7 @@ test_integrate_qags.s: test_integrate_qags.cpp.s
 
 # target to generate assembly for a file
 test_integrate_qags.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.s
 .PHONY : test_integrate_qags.cpp.s
 
 test_integrate_vegas.o: test_integrate_vegas.cpp.o
@@ -774,7 +804,7 @@ test_integrate_vegas.o: test_integrate_vegas.cpp.o
 
 # target to build an object file
 test_integrate_vegas.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.o
 .PHONY : test_integrate_vegas.cpp.o
 
 test_integrate_vegas.i: test_integrate_vegas.cpp.i
@@ -783,7 +813,7 @@ test_integrate_vegas.i: test_integrate_vegas.cpp.i
 
 # target to preprocess a source file
 test_integrate_vegas.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.i
 .PHONY : test_integrate_vegas.cpp.i
 
 test_integrate_vegas.s: test_integrate_vegas.cpp.s
@@ -792,7 +822,7 @@ test_integrate_vegas.s: test_integrate_vegas.cpp.s
 
 # target to generate assembly for a file
 test_integrate_vegas.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_vegas.dir/build.make lanre/test/CMakeFiles/test_integrate_vegas.dir/test_integrate_vegas.cpp.s
 .PHONY : test_integrate_vegas.cpp.s
 
 test_interpolate_univariate_spline.o: test_interpolate_univariate_spline.cpp.o
@@ -801,7 +831,7 @@ test_interpolate_univariate_spline.o: test_interpolate_univariate_spline.cpp.o
 
 # target to build an object file
 test_interpolate_univariate_spline.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.o
 .PHONY : test_interpolate_univariate_spline.cpp.o
 
 test_interpolate_univariate_spline.i: test_interpolate_univariate_spline.cpp.i
@@ -810,7 +840,7 @@ test_interpolate_univariate_spline.i: test_interpolate_univariate_spline.cpp.i
 
 # target to preprocess a source file
 test_interpolate_univariate_spline.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.i
 .PHONY : test_interpolate_univariate_spline.cpp.i
 
 test_interpolate_univariate_spline.s: test_interpolate_univariate_spline.cpp.s
@@ -819,7 +849,7 @@ test_interpolate_univariate_spline.s: test_interpolate_univariate_spline.cpp.s
 
 # target to generate assembly for a file
 test_interpolate_univariate_spline.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/test_interpolate_univariate_spline.cpp.s
 .PHONY : test_interpolate_univariate_spline.cpp.s
 
 test_kinetic_mixing.o: test_kinetic_mixing.cpp.o
@@ -828,7 +858,7 @@ test_kinetic_mixing.o: test_kinetic_mixing.cpp.o
 
 # target to build an object file
 test_kinetic_mixing.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.o
 .PHONY : test_kinetic_mixing.cpp.o
 
 test_kinetic_mixing.i: test_kinetic_mixing.cpp.i
@@ -837,7 +867,7 @@ test_kinetic_mixing.i: test_kinetic_mixing.cpp.i
 
 # target to preprocess a source file
 test_kinetic_mixing.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.i
 .PHONY : test_kinetic_mixing.cpp.i
 
 test_kinetic_mixing.s: test_kinetic_mixing.cpp.s
@@ -846,8 +876,62 @@ test_kinetic_mixing.s: test_kinetic_mixing.cpp.s
 
 # target to generate assembly for a file
 test_kinetic_mixing.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/test_kinetic_mixing.cpp.s
 .PHONY : test_kinetic_mixing.cpp.s
+
+test_optimize_hybrd.o: test_optimize_hybrd.cpp.o
+
+.PHONY : test_optimize_hybrd.o
+
+# target to build an object file
+test_optimize_hybrd.cpp.o:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrd.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrd.dir/test_optimize_hybrd.cpp.o
+.PHONY : test_optimize_hybrd.cpp.o
+
+test_optimize_hybrd.i: test_optimize_hybrd.cpp.i
+
+.PHONY : test_optimize_hybrd.i
+
+# target to preprocess a source file
+test_optimize_hybrd.cpp.i:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrd.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrd.dir/test_optimize_hybrd.cpp.i
+.PHONY : test_optimize_hybrd.cpp.i
+
+test_optimize_hybrd.s: test_optimize_hybrd.cpp.s
+
+.PHONY : test_optimize_hybrd.s
+
+# target to generate assembly for a file
+test_optimize_hybrd.cpp.s:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrd.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrd.dir/test_optimize_hybrd.cpp.s
+.PHONY : test_optimize_hybrd.cpp.s
+
+test_optimize_hybrj.o: test_optimize_hybrj.cpp.o
+
+.PHONY : test_optimize_hybrj.o
+
+# target to build an object file
+test_optimize_hybrj.cpp.o:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/test_optimize_hybrj.cpp.o
+.PHONY : test_optimize_hybrj.cpp.o
+
+test_optimize_hybrj.i: test_optimize_hybrj.cpp.i
+
+.PHONY : test_optimize_hybrj.i
+
+# target to preprocess a source file
+test_optimize_hybrj.cpp.i:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/test_optimize_hybrj.cpp.i
+.PHONY : test_optimize_hybrj.cpp.i
+
+test_optimize_hybrj.s: test_optimize_hybrj.cpp.s
+
+.PHONY : test_optimize_hybrj.s
+
+# target to generate assembly for a file
+test_optimize_hybrj.cpp.s:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/test_optimize_hybrj.cpp.s
+.PHONY : test_optimize_hybrj.cpp.s
 
 test_phase_space_rambo.o: test_phase_space_rambo.cpp.o
 
@@ -855,7 +939,7 @@ test_phase_space_rambo.o: test_phase_space_rambo.cpp.o
 
 # target to build an object file
 test_phase_space_rambo.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.o
 .PHONY : test_phase_space_rambo.cpp.o
 
 test_phase_space_rambo.i: test_phase_space_rambo.cpp.i
@@ -864,7 +948,7 @@ test_phase_space_rambo.i: test_phase_space_rambo.cpp.i
 
 # target to preprocess a source file
 test_phase_space_rambo.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.i
 .PHONY : test_phase_space_rambo.cpp.i
 
 test_phase_space_rambo.s: test_phase_space_rambo.cpp.s
@@ -873,7 +957,7 @@ test_phase_space_rambo.s: test_phase_space_rambo.cpp.s
 
 # target to generate assembly for a file
 test_phase_space_rambo.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_phase_space_rambo.dir/build.make lanre/test/CMakeFiles/test_phase_space_rambo.dir/test_phase_space_rambo.cpp.s
 .PHONY : test_phase_space_rambo.cpp.s
 
 test_roots_bracket.o: test_roots_bracket.cpp.o
@@ -882,7 +966,7 @@ test_roots_bracket.o: test_roots_bracket.cpp.o
 
 # target to build an object file
 test_roots_bracket.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.o
 .PHONY : test_roots_bracket.cpp.o
 
 test_roots_bracket.i: test_roots_bracket.cpp.i
@@ -891,7 +975,7 @@ test_roots_bracket.i: test_roots_bracket.cpp.i
 
 # target to preprocess a source file
 test_roots_bracket.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.i
 .PHONY : test_roots_bracket.cpp.i
 
 test_roots_bracket.s: test_roots_bracket.cpp.s
@@ -900,7 +984,7 @@ test_roots_bracket.s: test_roots_bracket.cpp.s
 
 # target to generate assembly for a file
 test_roots_bracket.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_roots_bracket.dir/build.make lanre/test/CMakeFiles/test_roots_bracket.dir/test_roots_bracket.cpp.s
 .PHONY : test_roots_bracket.cpp.s
 
 test_special_functions_besselk.o: test_special_functions_besselk.cpp.o
@@ -909,7 +993,7 @@ test_special_functions_besselk.o: test_special_functions_besselk.cpp.o
 
 # target to build an object file
 test_special_functions_besselk.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.o
 .PHONY : test_special_functions_besselk.cpp.o
 
 test_special_functions_besselk.i: test_special_functions_besselk.cpp.i
@@ -918,7 +1002,7 @@ test_special_functions_besselk.i: test_special_functions_besselk.cpp.i
 
 # target to preprocess a source file
 test_special_functions_besselk.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.i
 .PHONY : test_special_functions_besselk.cpp.i
 
 test_special_functions_besselk.s: test_special_functions_besselk.cpp.s
@@ -927,7 +1011,7 @@ test_special_functions_besselk.s: test_special_functions_besselk.cpp.s
 
 # target to generate assembly for a file
 test_special_functions_besselk.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_besselk.dir/build.make lanre/test/CMakeFiles/test_special_functions_besselk.dir/test_special_functions_besselk.cpp.s
 .PHONY : test_special_functions_besselk.cpp.s
 
 test_special_functions_lambertw.o: test_special_functions_lambertw.cpp.o
@@ -936,7 +1020,7 @@ test_special_functions_lambertw.o: test_special_functions_lambertw.cpp.o
 
 # target to build an object file
 test_special_functions_lambertw.cpp.o:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.o
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.o
 .PHONY : test_special_functions_lambertw.cpp.o
 
 test_special_functions_lambertw.i: test_special_functions_lambertw.cpp.i
@@ -945,7 +1029,7 @@ test_special_functions_lambertw.i: test_special_functions_lambertw.cpp.i
 
 # target to preprocess a source file
 test_special_functions_lambertw.cpp.i:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.i
 .PHONY : test_special_functions_lambertw.cpp.i
 
 test_special_functions_lambertw.s: test_special_functions_lambertw.cpp.s
@@ -954,7 +1038,7 @@ test_special_functions_lambertw.s: test_special_functions_lambertw.cpp.s
 
 # target to generate assembly for a file
 test_special_functions_lambertw.cpp.s:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_special_functions_lambertw.dir/build.make lanre/test/CMakeFiles/test_special_functions_lambertw.dir/test_special_functions_lambertw.cpp.s
 .PHONY : test_special_functions_lambertw.cpp.s
 
 # Help Target
@@ -964,21 +1048,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/local"
+	@echo "... list_install_components"
+	@echo "... edit_cache"
+	@echo "... test_roots_bracket"
+	@echo "... test_optimize_hybrj"
+	@echo "... install"
 	@echo "... test_cosmology_standard_model"
 	@echo "... test_dm_models_compute_xi"
 	@echo "... test_gamma_ray_spectra_neutral_pion"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... test_interpolate_univariate_spline"
 	@echo "... test_diffeq_non_stiff"
 	@echo "... test_integrate_qags"
 	@echo "... install/strip"
 	@echo "... test_phase_space_rambo"
-	@echo "... test_roots_bracket"
 	@echo "... test_diffeq_stiff"
 	@echo "... test_integrate_vegas"
 	@echo "... test_cosmology_thermodynamic_particle"
+	@echo "... test_optimize_hybrd"
 	@echo "... test_special_functions_besselk"
 	@echo "... test_special_functions_lambertw"
 	@echo "... test_dual"
@@ -1033,6 +1119,12 @@ help:
 	@echo "... test_kinetic_mixing.o"
 	@echo "... test_kinetic_mixing.i"
 	@echo "... test_kinetic_mixing.s"
+	@echo "... test_optimize_hybrd.o"
+	@echo "... test_optimize_hybrd.i"
+	@echo "... test_optimize_hybrd.s"
+	@echo "... test_optimize_hybrj.o"
+	@echo "... test_optimize_hybrj.i"
+	@echo "... test_optimize_hybrj.s"
 	@echo "... test_phase_space_rambo.o"
 	@echo "... test_phase_space_rambo.i"
 	@echo "... test_phase_space_rambo.s"
@@ -1056,6 +1148,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

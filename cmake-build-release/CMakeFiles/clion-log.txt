@@ -1,7 +1,7 @@
-"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/local/opt/llvm/bin/clang++ -G "CodeBlocks - Unix Makefiles" /Users/loganmorrison/Desktop/Haliax
+"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/local/opt/llvm/bin/clang++ -G "CodeBlocks - Unix Makefiles" /Users/loganmorrison/Documents/git_hub/Haliax
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-download
+-- Build files have been written to: /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-download
 [ 11%] Performing update step for 'googletest'
 Current branch master is up to date.
 [ 22%] No configure step for 'googletest'
@@ -15,4 +15,4 @@ Current branch master is up to date.
 -- pybind11 v2.3.dev1
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/loganmorrison/Desktop/Haliax/cmake-build-release
+-- Build files have been written to: /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release

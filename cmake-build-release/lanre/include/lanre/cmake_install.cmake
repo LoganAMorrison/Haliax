@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loganmorrison/Desktop/Haliax/lanre/include/lanre
+# Install script for directory: /Users/loganmorrison/Documents/git_hub/Haliax/lanre/include/lanre
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

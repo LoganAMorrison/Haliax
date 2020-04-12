@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loganmorrison/Desktop/Haliax/pybind11
+# Install script for directory: /Users/loganmorrison/Documents/git_hub/Haliax/pybind11
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

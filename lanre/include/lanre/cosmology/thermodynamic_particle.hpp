@@ -24,7 +24,6 @@
 
 #include "lanre/autodiff/dual.hpp"
 #include "lanre/special_functions/besselk.hpp"
-#include <boost/math/special_functions/bessel.hpp>
 #include <cmath>
 
 namespace lanre::cosmology {
@@ -64,15 +63,16 @@ private:
      */
     template<class Type>
     Type energyDensityScaled(Type x) const {
+        using lanre::special_functions::besselk1;
+        using lanre::special_functions::besselk2;
         if (x == 0.0)
             return static_cast<Type>(M_PI * M_PI / 30.0 * ((m_spin2 % 2 == 0) ? 1.0 : 7.0 / 8.0));
         else {
-            using namespace boost::math;
             Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
 
             Type sum = 0.0;
             for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / (n * n) * (x * n * cyl_bessel_k(1, n * x) + 3.0 * cyl_bessel_k(2, n * x));
+                sum += pow(eta, n + 1) / (n * n) * (x * n * besselk1(n * x) + 3.0 * besselk2(n * x));
             }
             return x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
         }
@@ -85,15 +85,15 @@ private:
      */
     template<class Type>
     Type pressureDensityScaled(Type x) const {
+        using lanre::special_functions::besselk2;
         if (x == 0.0)
             return static_cast<Type>(M_PI * M_PI / 90.0 * ((m_spin2 % 2 == 0) ? 1 : 7.0 / 8.0));
         else {
-            using namespace boost::math;
             Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
 
             Type sum = static_cast<Type>(0.0);
             for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / (n * n) * cyl_bessel_k(2, n * x);
+                sum += pow(eta, n + 1) / (n * n) * besselk2(n * x);
             }
             return x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
         }
@@ -106,15 +106,15 @@ private:
      */
     template<class Type>
     Type entropyDensityScaled(Type x) const {
+        using lanre::special_functions::besselk3;
         if (x == static_cast<Type>(0.0))
             return static_cast<Type>(2.0 * M_PI * M_PI / 45.0 * ((m_spin2 % 2 == 0) ? 1.0 : 7.0 / 8.0));
         else {
-            using namespace boost::math;
             Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
 
             Type sum = 0.0;
             for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / n * cyl_bessel_k(3, n * x);
+                sum += pow(eta, n + 1) / n * besselk3(n * x);
             }
             return x * x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
         }

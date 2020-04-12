@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Pl
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/loganmorrison/Desktop/Haliax/lanre/include -I/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include -I/usr/local/include -I/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include -I/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock -isystem /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googletest 
+CXX_INCLUDES = -I/Users/loganmorrison/Documents/git_hub/Haliax/lanre/include -I/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/include -I/usr/local/include -I/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/include -I/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock -isystem /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest/include -isystem /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googletest 
 

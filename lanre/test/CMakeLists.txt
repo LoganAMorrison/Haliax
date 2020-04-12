@@ -228,3 +228,23 @@ target_link_libraries(test_gamma_ray_spectra_neutral_pion PUBLIC
 
 set_target_properties(test_gamma_ray_spectra_neutral_pion PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)
+
+add_executable(test_optimize_hybrd test_optimize_hybrd.cpp)
+target_link_libraries(test_optimize_hybrd PUBLIC
+        lanre
+        gtest_main
+        Eigen3::Eigen
+        ${Boost_LIBRARIES})
+
+set_target_properties(test_optimize_hybrd PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)
+
+add_executable(test_optimize_hybrj test_optimize_hybrj.cpp)
+target_link_libraries(test_optimize_hybrj PUBLIC
+        lanre
+        gtest_main
+        Eigen3::Eigen
+        ${Boost_LIBRARIES})
+
+set_target_properties(test_optimize_hybrj PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)

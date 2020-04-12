@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-download
+# Install script for directory: /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-download
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-download/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-download/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

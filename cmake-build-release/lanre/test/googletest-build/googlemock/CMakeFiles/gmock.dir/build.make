@@ -46,10 +46,10 @@ RM = "/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CL
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loganmorrison/Desktop/Haliax
+CMAKE_SOURCE_DIR = /Users/loganmorrison/Documents/git_hub/Haliax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loganmorrison/Desktop/Haliax/cmake-build-release
+CMAKE_BINARY_DIR = /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release
 
 # Include any dependencies generated for this target.
 include lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/depend.make
@@ -62,16 +62,16 @@ include lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/flags.make
 
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/flags.make
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: lanre/test/googletest-src/googlemock/src/gmock-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc
 
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
 # Object files for target gmock
 gmock_OBJECTS = \
@@ -83,9 +83,9 @@ gmock_EXTERNAL_OBJECTS =
 lib/libgmock.a: lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 lib/libgmock.a: lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make
 lib/libgmock.a: lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loganmorrison/Desktop/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgmock.a"
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgmock.a"
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/build: lib/libgmock.a
@@ -93,10 +93,10 @@ lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/build: lib/libgmock.
 .PHONY : lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/build
 
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
 .PHONY : lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
 
 lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/depend:
-	cd /Users/loganmorrison/Desktop/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loganmorrison/Desktop/Haliax /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock /Users/loganmorrison/Desktop/Haliax/cmake-build-release /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock /Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loganmorrison/Documents/git_hub/Haliax /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-src/googlemock /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lanre/test/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 

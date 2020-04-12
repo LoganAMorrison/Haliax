@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loganmorrison/Desktop/Haliax/lanre/include
+# Install script for directory: /Users/loganmorrison/Documents/git_hub/Haliax/lanre/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/loganmorrison/Desktop/Haliax/cmake-build-release/lanre/include/lanre/cmake_install.cmake")
+  include("/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/include/lanre/cmake_install.cmake")
 
 endif()
 

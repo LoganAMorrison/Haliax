@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -bundle -Wl,-headerpad_max_install_names  -o dm_models.cpython-36m-darwin.so CMakeFiles/dm_models.dir/haliax/dm_models.cpp.o -undefined dynamic_lookup 
