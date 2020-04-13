@@ -248,3 +248,14 @@ target_link_libraries(test_optimize_hybrj PUBLIC
 
 set_target_properties(test_optimize_hybrj PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)
+
+
+add_executable(test_particles test_particles.cpp)
+target_link_libraries(test_particles PUBLIC
+        lanre
+        gtest_main
+        Eigen3::Eigen
+        ${Boost_LIBRARIES})
+
+set_target_properties(test_particles PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)

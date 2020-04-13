@@ -21,7 +21,7 @@ protected:
 };
 
 TEST_F(KineticMixingTest, Widths) {
-    km1.vector_mediator_width("all");
+    std::cout << km1.vector_mediator_width("all") << std::endl;
 }
 
 TEST_F(KineticMixingTest, CrossSections) {
@@ -64,7 +64,7 @@ TEST_F(KineticMixingTest, RelicDensity) {
 }
 
 TEST_F(KineticMixingTest, ComputeXfMPU) {
-    double xf = km1.compute_xf_mpu();
+    //double xf = km1.compute_xf_mpu();
 }
 
 int main(int argc, char *argv[]) {

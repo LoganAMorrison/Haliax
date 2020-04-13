@@ -9,24 +9,32 @@
 #include "lanre/integrate/wgt.hpp"
 #include "lanre/integrate/cheb.hpp"
 #include <cmath>
+#include <array>
 
 namespace lanre {
 namespace integrate {
 
 
 template<typename Function>
-double qk15(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk15(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[4] = {
+    const static std::array<double, 4> wg = {
             0.129484966168869693270611432679082,
             0.279705391489276667901467771423780,
             0.381830050505118944950369775488975,
             0.417959183673469387755102040816327
     };
-    const static double wgk[8] = {
+    const static std::array<double, 8> wgk = {
             0.022935322010529224963732008058970,
             0.063092092629978553290700663189204,
             0.104790010322250183839876322541518,
@@ -36,7 +44,7 @@ double qk15(Function f, double a, double b, double *abserr, double *resabs, doub
             0.204432940075298892414161999234649,
             0.209482141084727828012999174891714
     };
-    const static double xgk[8] = {
+    const static std::array<double, 8> xgk = {
             0.991455371120812639206854697526329,
             0.949107912342758524526189684047851,
             0.864864423359769072789712788640926,
@@ -47,7 +55,7 @@ double qk15(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[7], fv2[7];
+    std::array<double, 7> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -103,19 +111,26 @@ double qk15(Function f, double a, double b, double *abserr, double *resabs, doub
 }
 
 template<typename Function>
-double qk21(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk21(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[5] = {
+    static const std::array<double, 5> wg = {
             0.066671344308688137593568809893332,
             0.149451349150580593145776339657697,
             0.219086362515982043995534934228163,
             0.269266719309996355091226921569469,
             0.295524224714752870173892994651338
     };
-    const static double wgk[11] = {
+    static const std::array<double, 11> wgk = {
             0.011694638867371874278064396062192,
             0.032558162307964727478818972459390,
             0.054755896574351996031381300244580,
@@ -128,7 +143,7 @@ double qk21(Function f, double a, double b, double *abserr, double *resabs, doub
             0.147739104901338491374841515972068,
             0.149445554002916905664936468389821
     };
-    const static double xgk[11] = {
+    static const std::array<double, 11> xgk = {
             0.995657163025808080735527280689003,
             0.973906528517171720077964012084452,
             0.930157491355708226001207180059508,
@@ -142,7 +157,7 @@ double qk21(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[10], fv2[10];
+    std::array<double, 10> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -196,12 +211,19 @@ double qk21(Function f, double a, double b, double *abserr, double *resabs, doub
 }
 
 template<typename Function>
-double qk31(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk31(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[8] = {
+    static const std::array<double, 8> wg = {
             0.030753241996117268354628393577204,
             0.070366047488108124709267416450667,
             0.107159220467171935011869546685869,
@@ -211,7 +233,7 @@ double qk31(Function f, double a, double b, double *abserr, double *resabs, doub
             0.198431485327111576456118326443839,
             0.202578241925561272880620199967519
     };
-    const static double wgk[16] = {
+    static const std::array<double, 16> wgk = {
             0.005377479872923348987792051430128,
             0.015007947329316122538374763075807,
             0.025460847326715320186874001019653,
@@ -229,7 +251,7 @@ double qk31(Function f, double a, double b, double *abserr, double *resabs, doub
             0.100769845523875595044946662617570,
             0.101330007014791549017374792767493
     };
-    const static double xgk[16] = {
+    static const std::array<double, 16> xgk = {
             0.998002298693397060285172840152271,
             0.987992518020485428489565718586613,
             0.967739075679139134257347978784337,
@@ -248,7 +270,7 @@ double qk31(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[15], fv2[15];
+    std::array<double, 15> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -303,12 +325,19 @@ double qk31(Function f, double a, double b, double *abserr, double *resabs, doub
 
 
 template<typename Function>
-double qk41(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk41(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[11] = {
+    static const std::array<double, 11> wg = {
             0.017614007139152118311861962351853,
             0.040601429800386941331039952274932,
             0.062672048334109063569506535187042,
@@ -320,7 +349,7 @@ double qk41(Function f, double a, double b, double *abserr, double *resabs, doub
             0.149172986472603746787828737001969,
             0.152753387130725850698084331955098
     };
-    const static double wgk[21] = {
+    static const std::array<double, 21> wgk = {
             0.003073583718520531501218293246031,
             0.008600269855642942198661787950102,
             0.014626169256971252983787960308868,
@@ -343,7 +372,7 @@ double qk41(Function f, double a, double b, double *abserr, double *resabs, doub
             0.076377867672080736705502835038061,
             0.076600711917999656445049901530102
     };
-    const static double xgk[21] = {
+    static const std::array<double, 21> xgk = {
             0.998859031588277663838315576545863,
             0.993128599185094924786122388471320,
             0.981507877450250259193342994720217,
@@ -367,7 +396,7 @@ double qk41(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[20], fv2[20];
+    std::array<double, 20> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -422,12 +451,19 @@ double qk41(Function f, double a, double b, double *abserr, double *resabs, doub
 
 
 template<typename Function>
-double qk51(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk51(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[13] = {
+    static const std::array<double, 13> wg = {
             0.011393798501026287947902964113235,
             0.026354986615032137261901815295299,
             0.040939156701306312655623487711646,
@@ -442,7 +478,7 @@ double qk51(Function f, double a, double b, double *abserr, double *resabs, doub
             0.122242442990310041688959518945852,
             0.123176053726715451203902873079050
     };
-    const static double wgk[26] = {
+    static const std::array<double, 26> wgk = {
             0.001987383892330315926507851882843,
             0.005561932135356713758040236901066,
             0.009473973386174151607207710523655,
@@ -471,7 +507,7 @@ double qk51(Function f, double a, double b, double *abserr, double *resabs, doub
             // note: wgk[25] was calculated from the values of wgk(1..25)
             0.061580818067832935078759824240066
     };
-    const static double xgk[26] = {
+    static const std::array<double, 26> xgk = {
             0.999262104992609834193457486540341,
             0.995556969790498097908784946893902,
             0.988035794534077247637331014577406,
@@ -500,7 +536,7 @@ double qk51(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[25], fv2[25];
+    std::array<double, 25> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -555,12 +591,19 @@ double qk51(Function f, double a, double b, double *abserr, double *resabs, doub
 
 
 template<typename Function>
-double qk61(Function f, double a, double b, double *abserr, double *resabs, double *resasc) {
+double qk61(
+        Function f,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[15] = {
+    static const std::array<double, 15> wg = {
             0.007968192496166605615465883474674,
             0.018466468311090959142302131912047,
             0.028784707883323369349719179611292,
@@ -577,7 +620,7 @@ double qk61(Function f, double a, double b, double *abserr, double *resabs, doub
             0.101762389748405504596428952168554,
             0.102852652893558840341285636705415
     };
-    const static double wgk[31] = {
+    static const std::array<double, 31> wgk = {
             0.001389013698677007624551591226760,
             0.003890461127099884051267201844516,
             0.006630703915931292173319826369750,
@@ -610,7 +653,7 @@ double qk61(Function f, double a, double b, double *abserr, double *resabs, doub
             0.051426128537459025933862879215781,
             0.051494729429451567558340433647099
     };
-    const static double xgk[31] = {
+    static const std::array<double, 31> xgk = {
             0.999484410050490637571325895705811,
             0.996893484074649540271630050918695,
             0.991630996870404594858628366109486,
@@ -644,7 +687,7 @@ double qk61(Function f, double a, double b, double *abserr, double *resabs, doub
             0.000000000000000000000000000000000
     };
 
-    double fv1[30], fv2[30];
+    std::array<double, 30> fv1 = {0}, fv2 = {0};
     double absc, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -699,13 +742,21 @@ double qk61(Function f, double a, double b, double *abserr, double *resabs, doub
 
 
 template<typename Function>
-double qk15i(Function f, double boun, int inf, double a, double b,
-             double *abserr, double *resabs, double *resasc) {
+double qk15i(
+        Function f,
+        double boun,
+        int inf,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[8] = {
+    static const std::array<double, 8> wg = {
             0.0,
             0.129484966168869693270611432679082,
             0.0,
@@ -715,7 +766,7 @@ double qk15i(Function f, double boun, int inf, double a, double b,
             0.0,
             0.417959183673469387755102040816327
     };
-    const static double wgk[8] = {
+    static const std::array<double, 8> wgk = {
             0.022935322010529224963732008058970,
             0.063092092629978553290700663189204,
             0.104790010322250183839876322541518,
@@ -725,7 +776,7 @@ double qk15i(Function f, double boun, int inf, double a, double b,
             0.204432940075298892414161999234649,
             0.209482141084727828012999174891714
     };
-    const static double xgk[8] = {
+    static const std::array<double, 8> xgk = {
             0.991455371120812639206854697526329,
             0.949107912342758524526189684047851,
             0.864864423359769072789712788640926,
@@ -735,78 +786,86 @@ double qk15i(Function f, double boun, int inf, double a, double b,
             0.207784955007898467600689403773245,
             0.000000000000000000000000000000000
     };
+    static const double epmach = std::numeric_limits<double>::epsilon();
+    static const double uflow = std::numeric_limits<double>::min();
 
-    double fv1[8], fv2[8];
-    double absc, absc1, absc2, centr, dinf;
-    double fc, fsum, fval1, fval2, hlgth, resg, resk;
-    double reskh, result, tabsc1, tabsc2;
-    int j;
+    std::array<double, 7> fv1 = {0}, fv2 = {0};
 
-    dinf = fmin((double) (1.0), (double) inf);
-    centr = 0.5 * (a + b);
-    hlgth = 0.5 * (b - a);
-    tabsc1 = boun + dinf * (1.0 - centr) / centr;
-    fval1 = f(tabsc1);
-    if (inf == 2)
-        fval1 += f(-tabsc1);
-    fc = (fval1 / centr) / centr;
-    resg = fc * wg[3];
-    resk = fc * wgk[7];
-    *resabs = fabs(resk);
-    for (j = 0; j < 7; j++) {
-        absc = hlgth * xgk[j];
-        absc1 = centr - absc;
-        absc2 = centr + absc;
+    const int dinf = std::min(1, inf);
+
+    double centr = 0.5 * (a + b);
+    double hlgth = 0.5 * (b - a);
+    double tabsc1 = boun + dinf * (1.0 - centr) / centr;
+    double fval1 = f(tabsc1);
+    if (inf == 2) fval1 = fval1 + f(-tabsc1);
+    double fc = (fval1 / centr) / centr;
+
+    double resg = wg[7] * fc;
+    double resk = wgk[7] * fc;
+    *resabs = std::abs(resk);
+    for (int j = 0; j < 7; j++) {
+        double absc = hlgth * xgk[j];
+        double absc1 = centr - absc;
+        double absc2 = centr + absc;
         tabsc1 = boun + dinf * (1.0 - absc1) / absc1;
-        tabsc2 = boun + dinf * (1.0 - absc2) / absc2;
+        double tabsc2 = boun + dinf * (1.0 - absc2) / absc2;
         fval1 = f(tabsc1);
-        fval2 = f(tabsc2);
-        if (inf == 2) {
-            fval1 += f(-tabsc1);
-            fval2 += f(-tabsc2);
-        }
+        double fval2 = f(tabsc2);
+        if (inf == 2) fval1 = fval1 + f(-tabsc1);
+        if (inf == 2) fval2 = fval2 + f(-tabsc2);
         fval1 = (fval1 / absc1) / absc1;
         fval2 = (fval2 / absc2) / absc2;
         fv1[j] = fval1;
         fv2[j] = fval2;
-        fsum = fval1 + fval2;
-        if (j & 1) resg += wg[j / 2] * fsum; /* odd 'j's are truncated */
+        double fsum = fval1 + fval2;
+        resg += wg[j] * fsum;
         resk += wgk[j] * fsum;
-        *resabs = (*resabs) + wgk[j] * (fabs(fval1) + fabs(fval2));
+        *resabs += wgk[j] * (std::abs(fval1) + std::abs(fval2));
     }
-    reskh = resk * 0.5;
-    *resasc = wgk[7] * fabs(fc - reskh);
-    for (j = 0; j < 7; j++)
-        *resasc = (*resasc) + wgk[j] * (fabs(fv1[j] - reskh) +
-                fabs(fv2[j] - reskh));
-    result = resk * hlgth;
-    *resabs = (*resabs) * hlgth;
-    *resasc = (*resasc) * hlgth;
-    *abserr = fabs((resk - resg) * hlgth);
-    if ((*resasc != 0.0) && (*abserr != 0.0))
-        *abserr = (*resasc) * fmin(1.0, pow((200.0 * (*abserr) / (*resasc)), 1.5));
-    if (*resabs > kUFLOW / (50.0 * kEPMACH))
-        *abserr = fmax(kEPMACH * 50.0 * (*resabs), (*abserr));
-    return result;
+    double reskh = resk * 0.5;
+    *resasc = wgk[7] * std::abs(fc - reskh);
 
+    for (int j = 0; j < 7; j++) {
+        *resasc += wgk[j] * (std::abs(fv1[j] - reskh) + std::abs(fv2[j] - reskh));
+    }
+
+    double result = resk * hlgth;
+    *resasc *= hlgth;
+    *resabs *= hlgth;
+    *abserr = std::abs((resk - resg) * hlgth);
+
+    if (*resasc != 0.0 && *abserr != 0.0) *abserr = *resasc * std::min(1.0, pow(200.0 * (*abserr) / (*resasc), 1.5));
+    if (*resabs > uflow / (50.0 * epmach)) *abserr = std::max((epmach * 50.0) * (*resabs), (*abserr));
+
+    return result;
 }
 
 template<typename Integrand, typename WeightFunc>
-double qk15w(Integrand f, WeightFunc w,
-             double p1, double p2, double p3,
-             double p4, int kp, double a, double b, double *abserr,
-             double *resabs, double *resasc) {
+double qk15w(
+        Integrand f,
+        WeightFunc w,
+        double p1,
+        double p2,
+        double p3,
+        double p4,
+        int kp,
+        double a,
+        double b,
+        double *abserr,
+        double *resabs,
+        double *resasc
+) {
     // gauss quadrature weights and kronron quadrature abscissae and weights
     // as evaluated with 80 decimal digit arithmetic by l. w. fullerton,
     // bell labs, nov. 1981.
 
-    const static double wg[4] = {
+    static const std::array<double, 4> wg = {
             0.1294849661688697e+00,
             0.2797053914892767e+00,
             0.3818300505051889e+00,
             0.4179591836734694e+00
     };
-    const static double wgk[8] = {
+    static const std::array<double, 8> wgk = {
             0.2293532201052922e-01,
             0.6309209262997855e-01,
             0.1047900103222502e+00,
@@ -816,7 +875,7 @@ double qk15w(Integrand f, WeightFunc w,
             0.2044329400752989e+00,
             0.2094821410847278e+00
     };
-    const static double xgk[8] = {
+    static const std::array<double, 8> xgk = {
             0.9914553711208126e+00,
             0.9491079123427585e+00,
             0.8648644233597691e+00,
@@ -827,7 +886,7 @@ double qk15w(Integrand f, WeightFunc w,
             0.0000000000000000e+00
     };
 
-    double fv1[7], fv2[7];
+    std::array<double, 7> fv1 = {0}, fv2 = {0};
     double absc, absc1, absc2, centr, dhlgth;
     double fc, fsum, fval1, fval2, hlgth;
     double resg, resk, reskh, result;
@@ -885,10 +944,17 @@ double qk15w(Integrand f, WeightFunc w,
 }
 
 template<typename Integrand>
-double qc25c(Integrand f, double a, double b, double c, double *abserr,
-             int *krul, int *neval) {
+double qc25c(
+        Integrand f,
+        double a,
+        double b,
+        double c,
+        double *abserr,
+        int *krul,
+        int *neval
+) {
 
-    static const double x[11] = {
+    static const std::array<double, 11> x = {
             0.991444861373810411144557526928563,
             0.965925826289068286749743199728897,
             0.923879532511286756128183189396788,
@@ -903,7 +969,9 @@ double qc25c(Integrand f, double a, double b, double c, double *abserr,
     };
 
     double ak22, amom0, amom1, amom2, cc, centr;
-    double cheb12[13], cheb24[25], fval[25];
+    std::array<double, 13> cheb12 = {0};
+    std::array<double, 25> cheb24 = {0};
+    std::array<double, 25> fval = {0};
     double hlgth, resabs, resasc, res12, res24, u, result;
     int i, isym, k;
     int unitialized_value = 0xCCCCCCCC;
@@ -970,11 +1038,24 @@ double qc25c(Integrand f, double a, double b, double c, double *abserr,
 
 
 template<typename Integrand>
-double qc25f(Integrand f, double a, double b, double omega, int sincos,
-             int nrmom, int maxp1, int ksave, double *abserr, int *neval,
-             double *resabs, double *resasc, int *momcom, double **chebmo) {
+double qc25f(
+        Integrand f,
+        double a,
+        double b,
+        double omega,
+        int sincos,
+        int nrmom,
+        int maxp1,
+        int ksave,
+        double *abserr,
+        int *neval,
+        double *resabs,
+        double *resasc,
+        int *momcom,
+        double **chebmo
+) {
 
-    static const double x[11] = {
+    static const std::array<double, 11> x = {
             0.991444861373810411144557526928563,
             0.965925826289068286749743199728897,
             0.923879532511286756128183189396788,
@@ -991,8 +1072,14 @@ double qc25f(Integrand f, double a, double b, double omega, int sincos,
     double ac, an, an2, as, asap, ass, centr, conc, cons, cospar;
     double estc, ests, hlgth, parint, par2, par22;
     double resc12, resc24, ress12, ress24, result, sinpar;
-    double cheb12[13], cheb24[25], d[28], d1[28], d2[28];
-    double d3[28], fval[25], v[28];
+    std::array<double, 13> cheb12 = {0};
+    std::array<double, 25> cheb24 = {0};
+    std::array<double, 28> d = {0};
+    std::array<double, 28> d1 = {0};
+    std::array<double, 28> d2 = {0};
+    std::array<double, 28> d3 = {0};
+    std::array<double, 25> fval = {0};
+    std::array<double, 28> v = {0};
     int unitialized_value = 0xCCCCCCCC;
     double p2 = unitialized_value, p3 = unitialized_value, p4 = unitialized_value;
     int i, isym, j, k, m, noequ, noeq1, mm1;
@@ -1001,11 +1088,11 @@ double qc25f(Integrand f, double a, double b, double omega, int sincos,
     hlgth = 0.5 * (b - a);
     parint = omega * hlgth;
 
-/* Compute the integral using the 15-point Gauss-Kronrod formula
- * if the value of the parameter in the integrand is small or
- * is less than (bb-aa)/2^(maxp1-2), where (aa,bb) is the original
- * integration interval.
- */
+    /* Compute the integral using the 15-point Gauss-Kronrod formula
+     * if the value of the parameter in the integrand is small or
+     * is less than (bb-aa)/2^(maxp1-2), where (aa,bb) is the original
+     * integration interval.
+     */
     if (fabs(parint) > 2.0) goto _10;
     result = qk15w(f, dqwgto, omega, p2, p3, p4, sincos, a, b,
                    abserr, resabs, resasc);
@@ -1208,11 +1295,25 @@ double qc25f(Integrand f, double a, double b, double omega, int sincos,
 }
 
 template<typename Integrand>
-double qc25s(Integrand f, double a, double b, double bl, double br,
-             double alfa, double beta, double ri[], double rj[], double rg[],
-             double rh[], double *abserr, double *resasc, int wgtfunc, int *nev) {
+double qc25s(
+        Integrand f,
+        double a,
+        double b,
+        double bl,
+        double br,
+        double alfa,
+        double beta,
+        double ri[],
+        double rj[],
+        double rg[],
+        double rh[],
+        double *abserr,
+        double *resasc,
+        int wgtfunc,
+        int *nev
+) {
 
-    static const double x[11] = {
+    static const std::array<double, 11> x = {
             0.991444861373810411144557526928563,
             0.965925826289068286749743199728897,
             0.923879532511286756128183189396788,
@@ -1227,7 +1328,9 @@ double qc25s(Integrand f, double a, double b, double bl, double br,
     };
 
     double centr, dc, factor, fix, hlgth, resabs, res12, res24, u, result;
-    double cheb12[13], cheb24[25], fval[25];
+    std::array<double, 13> cheb12 = {0};
+    std::array<double, 25> cheb24 = {0};
+    std::array<double, 25> fval = {0};
     int i, isym;
 
     *nev = 25;

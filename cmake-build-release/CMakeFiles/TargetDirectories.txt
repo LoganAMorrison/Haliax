@@ -28,6 +28,7 @@
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/include/lanre/CMakeFiles/edit_cache.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/install/local.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/list_install_components.dir
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/rebuild_cache.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/edit_cache.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_roots_bracket.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_optimize_hybrj.dir
@@ -36,6 +37,8 @@
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_dm_models_compute_xi.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_gamma_ray_spectra_neutral_pion.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_higgs_portal.dir
+/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_particles.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_diffeq_non_stiff.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_integrate_qags.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/install/strip.dir
@@ -49,10 +52,8 @@
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_dual.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_dm_models_dipole_dm.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_dm_models_darksun.dir
-/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/rebuild_cache.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_dm_models_constant_thermal_cross_section.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_kinetic_mixing.dir
-/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_higgs_portal.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/CMakeFiles/install/local.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/CMakeFiles/install/strip.dir
 /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/googletest-build/CMakeFiles/install.dir

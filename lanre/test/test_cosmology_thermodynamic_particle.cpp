@@ -2,6 +2,7 @@
 // Created by Logan Morrison on 3/19/20.
 //
 #include "lanre/cosmology/thermodynamic_particle.hpp"
+#include "lanre/cosmology/thermodynamic_functions.hpp"
 #include "gtest/gtest.h"
 #include <vector>
 #include <cmath>

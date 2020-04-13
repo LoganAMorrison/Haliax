@@ -265,11 +265,11 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         elist[maxerr] = error2;
         elist[last] = error1;
 
-/* Call qsrt to maintain the descending ordering in the list of error
-    estimates and select the subinterval with nrmax-th largest
-    error estimate (to be bisected next). */
+    /* Call qsrt to maintain the descending ordering in the list of error
+        estimates and select the subinterval with nrmax-th largest
+        error estimate (to be bisected next). */
         _110:
-        qsrt(limit, last, &maxerr, &errmax, elist, iord, &nrmax);
+        qsrt(limit, last, maxerr, errmax, elist, iord, nrmax);
         if (errsum <= errbnd) goto _190;
         if (*ier != 0) goto _170;
         if (noext) goto _160;

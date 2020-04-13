@@ -22,103 +22,17 @@
 #ifndef LANRE_COSMOLOGY_THERMODYNAMIC_PARTICLE_HPP
 #define LANRE_COSMOLOGY_THERMODYNAMIC_PARTICLE_HPP
 
-#include "lanre/autodiff/dual.hpp"
-#include "lanre/special_functions/besselk.hpp"
+#include "lanre/cosmology/thermodynamic_functions.hpp"
 #include <cmath>
 
-namespace lanre::cosmology {
+namespace lanre {
+namespace cosmology {
 
 class ThermodynamicParticle {
 private:
     double m_mass;
     double m_g;
     unsigned int m_spin2;
-
-    /**
-     * Number density scaled by the particle's temperature and internal d.o.f.
-     * @param x mass divided by temperature: m / T
-     * @return neq(T) / (g T^3)
-     */
-    template<class Type>
-    Type neqScaled(Type x) const {
-        using lanre::special_functions::besselk2;
-        if (x == 0.0)
-            return (m_spin2 % 2 == 0) ? static_cast<Type>(121793828233573) : static_cast<Type>(0.0913453711751798);
-        else {
-            using namespace boost::math;
-            Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
-
-            Type sum = static_cast<Type>(0.0);
-            for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) * besselk2(n * x) / n;
-            }
-            return x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
-        }
-    }
-
-    /**
-     * Energy density scaled by the particle's temperature and internal d.o.f.
-     * @param x mass divided by temperature: m / T
-     * @return energy_density(T) / (g T^4)
-     */
-    template<class Type>
-    Type energyDensityScaled(Type x) const {
-        using lanre::special_functions::besselk1;
-        using lanre::special_functions::besselk2;
-        if (x == 0.0)
-            return static_cast<Type>(M_PI * M_PI / 30.0 * ((m_spin2 % 2 == 0) ? 1.0 : 7.0 / 8.0));
-        else {
-            Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
-
-            Type sum = 0.0;
-            for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / (n * n) * (x * n * besselk1(n * x) + 3.0 * besselk2(n * x));
-            }
-            return x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
-        }
-    }
-
-    /**
-     * Pressure density scaled by the particle's temperature and internal d.o.f.
-     * @param x mass divided by temperature: m / T
-     * @return pressure_density(T) / (g T^4)
-     */
-    template<class Type>
-    Type pressureDensityScaled(Type x) const {
-        using lanre::special_functions::besselk2;
-        if (x == 0.0)
-            return static_cast<Type>(M_PI * M_PI / 90.0 * ((m_spin2 % 2 == 0) ? 1 : 7.0 / 8.0));
-        else {
-            Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
-
-            Type sum = static_cast<Type>(0.0);
-            for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / (n * n) * besselk2(n * x);
-            }
-            return x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
-        }
-    }
-
-    /**
-     * Entropy density scaled by the particle's temperature and internal d.o.f.
-     * @param x mass divided by temperature: m / T
-     * @return entropy_density(T) / (g T^3)
-     */
-    template<class Type>
-    Type entropyDensityScaled(Type x) const {
-        using lanre::special_functions::besselk3;
-        if (x == static_cast<Type>(0.0))
-            return static_cast<Type>(2.0 * M_PI * M_PI / 45.0 * ((m_spin2 % 2 == 0) ? 1.0 : 7.0 / 8.0));
-        else {
-            Type eta = static_cast<Type>((m_spin2 % 2 == 0) ? 1.0 : -1.0);
-
-            Type sum = 0.0;
-            for (int n = 1; n <= 5; n++) {
-                sum += pow(eta, n + 1) / n * besselk3(n * x);
-            }
-            return x * x * x * sum / static_cast<Type>(2 * M_PI * M_PI);
-        }
-    }
 
 public:
     ThermodynamicParticle(double t_mass, double t_g, unsigned int t_spin2)
@@ -144,7 +58,7 @@ public:
      * @return Number density
      */
     double neq(double T) const {
-        return m_g * neqScaled(m_mass / T) * T * T * T;
+        return cosmology::neq(T, m_mass, m_g, m_spin2);
     }
 
     /**
@@ -156,7 +70,7 @@ public:
     double neq_deriv(double T) const {
         using lanre::autodiff::Dual;
         Dual<double> TT{T, 1.0};
-        Dual<double> res = m_g * neqScaled(m_mass / TT) * TT * TT * TT;
+        auto res = cosmology::neq(TT, m_mass, m_g, m_spin2);
         return res.eps;
     }
 
@@ -166,7 +80,7 @@ public:
      * @return Energy density
      */
     double energy_density(double T) const {
-        return m_g * energyDensityScaled(m_mass / T) * T * T * T * T;
+        return cosmology::energy_density(T, m_mass, m_g, m_spin2);
     }
 
     /**
@@ -175,7 +89,7 @@ public:
      * @return Pressure density
      */
     double pressure_density(double T) const {
-        return m_g * pressureDensityScaled(m_mass / T) * T * T * T * T;
+        return cosmology::pressure_density(T, m_mass, m_g, m_spin2);
     }
 
     /**
@@ -184,7 +98,7 @@ public:
      * @return Entropy density
      */
     double entropy_density(double T) const {
-        return m_g * entropyDensityScaled(m_mass / T) * T * T * T;
+        return cosmology::entropy_density(T, m_mass, m_g, m_spin2);
     }
 
     /**
@@ -194,7 +108,7 @@ public:
      * @return D.o.f. stored in energy
      */
     double geff(double T) const {
-        return 30.0 / (M_PI * M_PI) * m_g * energyDensityScaled(m_mass / T);
+        return cosmology::geff(T, m_mass, m_g, m_spin2);
     }
 
     /**
@@ -204,10 +118,12 @@ public:
      * @return D.o.f. stored in entropy
      */
     double heff(double T) const {
-        return m_g * 45.0 / (2.0 * M_PI * M_PI) * entropyDensityScaled(m_mass / T);
+        return cosmology::heff(T, m_mass, m_g, m_spin2);
     }
 };
 
-} // namespace lanre::cosmology
+
+} // namespace cosmology
+} // namespace lanre
 
 #endif //LANRE_COSMOLOGY_THERMODYNAMIC_PARTICLE_HPP

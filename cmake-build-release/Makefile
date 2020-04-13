@@ -290,6 +290,32 @@ test_interpolate_univariate_spline/fast:
 .PHONY : test_interpolate_univariate_spline/fast
 
 #=============================================================================
+# Target rules for targets named test_higgs_portal
+
+# Build rule for target.
+test_higgs_portal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_higgs_portal
+.PHONY : test_higgs_portal
+
+# fast build rule for target.
+test_higgs_portal/fast:
+	$(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
+.PHONY : test_higgs_portal/fast
+
+#=============================================================================
+# Target rules for targets named test_particles
+
+# Build rule for target.
+test_particles: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_particles
+.PHONY : test_particles
+
+# fast build rule for target.
+test_particles/fast:
+	$(MAKE) -f lanre/test/CMakeFiles/test_particles.dir/build.make lanre/test/CMakeFiles/test_particles.dir/build
+.PHONY : test_particles/fast
+
+#=============================================================================
 # Target rules for targets named test_diffeq_non_stiff
 
 # Build rule for target.
@@ -470,19 +496,6 @@ test_kinetic_mixing: cmake_check_build_system
 test_kinetic_mixing/fast:
 	$(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/build
 .PHONY : test_kinetic_mixing/fast
-
-#=============================================================================
-# Target rules for targets named test_higgs_portal
-
-# Build rule for target.
-test_higgs_portal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_higgs_portal
-.PHONY : test_higgs_portal
-
-# fast build rule for target.
-test_higgs_portal/fast:
-	$(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
-.PHONY : test_higgs_portal/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -666,6 +679,8 @@ help:
 	@echo "... test_dm_models_compute_xi"
 	@echo "... test_gamma_ray_spectra_neutral_pion"
 	@echo "... test_interpolate_univariate_spline"
+	@echo "... test_higgs_portal"
+	@echo "... test_particles"
 	@echo "... test_diffeq_non_stiff"
 	@echo "... test_integrate_qags"
 	@echo "... test_phase_space_rambo"
@@ -680,7 +695,6 @@ help:
 	@echo "... test_dm_models_darksun"
 	@echo "... test_dm_models_constant_thermal_cross_section"
 	@echo "... test_kinetic_mixing"
-	@echo "... test_higgs_portal"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest_main"

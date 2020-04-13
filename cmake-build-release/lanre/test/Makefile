@@ -81,6 +81,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -115,17 +126,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/loganmorrison/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -248,6 +248,36 @@ test_interpolate_univariate_spline: lanre/test/CMakeFiles/test_interpolate_univa
 test_interpolate_univariate_spline/fast:
 	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build.make lanre/test/CMakeFiles/test_interpolate_univariate_spline.dir/build
 .PHONY : test_interpolate_univariate_spline/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_higgs_portal.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_higgs_portal.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_higgs_portal.dir/rule
+
+# Convenience name for target.
+test_higgs_portal: lanre/test/CMakeFiles/test_higgs_portal.dir/rule
+
+.PHONY : test_higgs_portal
+
+# fast build rule for target.
+test_higgs_portal/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
+.PHONY : test_higgs_portal/fast
+
+# Convenience name for target.
+lanre/test/CMakeFiles/test_particles.dir/rule:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_particles.dir/rule
+.PHONY : lanre/test/CMakeFiles/test_particles.dir/rule
+
+# Convenience name for target.
+test_particles: lanre/test/CMakeFiles/test_particles.dir/rule
+
+.PHONY : test_particles
+
+# fast build rule for target.
+test_particles/fast:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_particles.dir/build.make lanre/test/CMakeFiles/test_particles.dir/build
+.PHONY : test_particles/fast
 
 # Convenience name for target.
 lanre/test/CMakeFiles/test_diffeq_non_stiff.dir/rule:
@@ -458,21 +488,6 @@ test_kinetic_mixing: lanre/test/CMakeFiles/test_kinetic_mixing.dir/rule
 test_kinetic_mixing/fast:
 	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_kinetic_mixing.dir/build.make lanre/test/CMakeFiles/test_kinetic_mixing.dir/build
 .PHONY : test_kinetic_mixing/fast
-
-# Convenience name for target.
-lanre/test/CMakeFiles/test_higgs_portal.dir/rule:
-	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f CMakeFiles/Makefile2 lanre/test/CMakeFiles/test_higgs_portal.dir/rule
-.PHONY : lanre/test/CMakeFiles/test_higgs_portal.dir/rule
-
-# Convenience name for target.
-test_higgs_portal: lanre/test/CMakeFiles/test_higgs_portal.dir/rule
-
-.PHONY : test_higgs_portal
-
-# fast build rule for target.
-test_higgs_portal/fast:
-	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/build
-.PHONY : test_higgs_portal/fast
 
 test_cosmology_standard_model.o: test_cosmology_standard_model.cpp.o
 
@@ -933,6 +948,33 @@ test_optimize_hybrj.cpp.s:
 	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_optimize_hybrj.dir/build.make lanre/test/CMakeFiles/test_optimize_hybrj.dir/test_optimize_hybrj.cpp.s
 .PHONY : test_optimize_hybrj.cpp.s
 
+test_particles.o: test_particles.cpp.o
+
+.PHONY : test_particles.o
+
+# target to build an object file
+test_particles.cpp.o:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_particles.dir/build.make lanre/test/CMakeFiles/test_particles.dir/test_particles.cpp.o
+.PHONY : test_particles.cpp.o
+
+test_particles.i: test_particles.cpp.i
+
+.PHONY : test_particles.i
+
+# target to preprocess a source file
+test_particles.cpp.i:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_particles.dir/build.make lanre/test/CMakeFiles/test_particles.dir/test_particles.cpp.i
+.PHONY : test_particles.cpp.i
+
+test_particles.s: test_particles.cpp.s
+
+.PHONY : test_particles.s
+
+# target to generate assembly for a file
+test_particles.cpp.s:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_particles.dir/build.make lanre/test/CMakeFiles/test_particles.dir/test_particles.cpp.s
+.PHONY : test_particles.cpp.s
+
 test_phase_space_rambo.o: test_phase_space_rambo.cpp.o
 
 .PHONY : test_phase_space_rambo.o
@@ -1049,6 +1091,7 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... list_install_components"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test_roots_bracket"
 	@echo "... test_optimize_hybrj"
@@ -1057,6 +1100,8 @@ help:
 	@echo "... test_dm_models_compute_xi"
 	@echo "... test_gamma_ray_spectra_neutral_pion"
 	@echo "... test_interpolate_univariate_spline"
+	@echo "... test_higgs_portal"
+	@echo "... test_particles"
 	@echo "... test_diffeq_non_stiff"
 	@echo "... test_integrate_qags"
 	@echo "... install/strip"
@@ -1070,10 +1115,8 @@ help:
 	@echo "... test_dual"
 	@echo "... test_dm_models_dipole_dm"
 	@echo "... test_dm_models_darksun"
-	@echo "... rebuild_cache"
 	@echo "... test_dm_models_constant_thermal_cross_section"
 	@echo "... test_kinetic_mixing"
-	@echo "... test_higgs_portal"
 	@echo "... test_cosmology_standard_model.o"
 	@echo "... test_cosmology_standard_model.i"
 	@echo "... test_cosmology_standard_model.s"
@@ -1125,6 +1168,9 @@ help:
 	@echo "... test_optimize_hybrj.o"
 	@echo "... test_optimize_hybrj.i"
 	@echo "... test_optimize_hybrj.s"
+	@echo "... test_particles.o"
+	@echo "... test_particles.i"
+	@echo "... test_particles.s"
 	@echo "... test_phase_space_rambo.o"
 	@echo "... test_phase_space_rambo.i"
 	@echo "... test_phase_space_rambo.s"
