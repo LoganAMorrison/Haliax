@@ -9,7 +9,8 @@
 #include <cmath>
 #include <boost/math/interpolators/cubic_b_spline.hpp>
 
-namespace lanre::cosmology {
+namespace lanre {
+namespace cosmology {
 
 constexpr double SM_HEFF_0 = 3.9387999991430975;
 constexpr double SM_HEFF_INF = 106.83;
@@ -332,7 +333,7 @@ double sm_entropy_density(double T) {
 double sm_entropy_density_deriv(double T) {
     return 2.0 * M_PI * M_PI / 45.0 * T * T * (T * sm_heff_deriv(T) + 3.0 * sm_heff(T));
 }
-
+}
 } // namespace lanre::cosmology
 
 #endif //LANRE_COSMOLOGY_STANDARD_MODEL_HPP

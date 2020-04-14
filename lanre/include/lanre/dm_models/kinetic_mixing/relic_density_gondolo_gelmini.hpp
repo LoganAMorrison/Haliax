@@ -8,11 +8,12 @@
 #include "lanre/autodiff/dual.hpp"
 #include "lanre/cosmology/standard_model.hpp"
 #include "lanre/cosmology/thermodynamic_functions.hpp"
-#include "lanre/integrate/qagi.hpp"
+#include "lanre/integrate/quad.hpp"
 
 #include "lanre/dm_models/kinetic_mixing/parameters.hpp"
 #include "lanre/dm_models/kinetic_mixing/thermal_cross_section.hpp"
 
+#include <cmath>
 #include <boost/math/tools/roots.hpp>
 
 namespace lanre {
@@ -57,13 +58,13 @@ double xstar_root_eqn_gondolo_gelmini(
 
     double s = sm_entropy_density(T);
     double ds = sm_entropy_density_deriv(T);
-    auto ndn = neq(Dual<double>{T}, params.mx, 2.0, 1.0);
+    auto ndn = neq(Dual<double>{T, 1.0}, params.mx, 2.0, 1);
     double yeq = ndn.val / s;
     // This is dY/dT = -x^2/m dY/xd
     double dyeq = (s * ndn.eps - ndn.val * ds) / (s * s);
     dyeq *= -params.mx / (xstar * xstar);
 
-    return xstar * xstar * dyeq + lam * deltabar * tcs * yeq * yeq;
+    return (xstar * xstar * dyeq) + (lam * deltabar * tcs * yeq * yeq);
 }
 
 /**
@@ -103,21 +104,26 @@ double compute_xstar_gondolo_gelmini(
  * @return
  */
 double compute_alpha_gondolo_gelmini(const Parameters &params, double xstar) {
-    using integrate::qagi;
+    using integrate::Quad;
     using cosmology::sm_sqrt_gstar;
 
     auto integrand = [params](double x) {
         return sm_sqrt_gstar(params.mx / x) * thermal_cross_section(params, x) / (x * x);
     };
 
-    double epsabs = 1e-8;
-    double epsrel = 1e-5;
-    double abserr;
-    int neval, ier;
-    double bound = xstar;
-    int inf = 1;
+    double abstol = 1e-8;
+    double reltol = 1e-5;
+    double error;
 
-    double integral = qagi(integrand, bound, inf, epsabs, epsrel, &abserr, &neval, &ier);
+    double integral = Quad<double>::integrate(
+            integrand,
+            xstar,
+            std::numeric_limits<double>::infinity(),
+            abstol,
+            reltol,
+            500,
+            &error
+    );
     double pf = sqrt(M_PI / 45.0) * params.mx * kM_PLANK;
     return pf * integral;
 }

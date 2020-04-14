@@ -6,6 +6,7 @@
 #include "lanre/diffeq/integrator.hpp"
 #include "gtest/gtest.h"
 
+using namespace lanre;
 using namespace lanre::diffeq;
 
 class HarmonicOscillator : public ODEFunction {

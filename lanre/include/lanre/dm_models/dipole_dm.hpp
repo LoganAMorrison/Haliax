@@ -13,8 +13,7 @@
 #include "lanre/diffeq/problem.hpp"
 #include "lanre/diffeq/radau.hpp"
 #include "lanre/diffeq/rodas.hpp"
-#include "lanre/integrate/qagi.hpp"
-#include "lanre/integrate/qagp.hpp"
+#include "lanre/integrate/quad.hpp"
 #include "lanre/interpolate/univariate_spline.hpp"
 #include <string>
 #include <cmath>
@@ -664,8 +663,7 @@ double DipoleDM::gamma_integrand(double w, double T) const {
  * @return
  */
 double DipoleDM::gamma(double T) const {
-    using integrate::qagp;
-    using integrate::qagi;
+    using integrate::Quad;
     // Integration parameters
     double epsabs = 1e-10;
     double epsrel = 1e-5;
@@ -681,17 +679,16 @@ double DipoleDM::gamma(double T) const {
     double brkpt = m_m2 - m_m1;
     std::vector<double> pts = {0.0, brkpt};
     // Integrate from brkpt -> infinity
-    double gam = qagi(f, brkpt, inf, epsabs, epsrel, &abserr, &neval, &ier);
+    double gam = Quad<double>::integrate(f, 0.0, std::numeric_limits<double>::infinity(), epsabs, epsrel);
     // Integrate from 0 -> brkpt
-    gam += qagp(f, 0.0, brkpt, pts.size(), pts.data(), epsabs, epsrel, &abserr, &neval, &ier);
+    gam += Quad<double>::integrate(f, 0.0, brkpt, epsabs, epsrel);
 
     return gam / (48.0 * pow(M_PI * m_m1, 3) * 2.0 * T);
 }
 
 
 double DipoleDM::average_p6_E3(double T, double y) const {
-    using integrate::qagp;
-    using integrate::qagi;
+    using integrate::Quad;
     // Integration parameters
     double epsabs = 1e-10;
     double epsrel = 1e-5;
@@ -707,7 +704,7 @@ double DipoleDM::average_p6_E3(double T, double y) const {
         return pow(p * p / E, 3) * exp(-E / Tx);
     };
 
-    return qagi(f, 0.0, inf, epsabs, epsrel, &abserr, &neval, &ier);
+    return Quad<double>::integrate(f, 0.0, std::numeric_limits<double>::infinity(), epsabs, epsrel);
 }
 
 /**
@@ -798,7 +795,7 @@ double DipoleDM::thermal_cross_section(double x) const {
             besselk2e(x) + rat * rat * besselk2e(rat * x) * exp(x * (1.0 - rat))
     );
     const double pf = 1.0 / (denom * denom * x / m_m1);
-    auto integrand = [this, &x](double peff) {
+    auto f = [this, &x](double peff) {
         const double res = thermal_cross_section_integrand(peff, x);
         return res;
     };
@@ -807,8 +804,7 @@ double DipoleDM::thermal_cross_section(double x) const {
     double epsrel = 1e-5;
     double abserr;
     int neval, ier;
-
-    return pf * qagi(integrand, 0.0, 1, epsabs, epsrel, &abserr, &neval, &ier);
+    return pf * Quad<double>::integrate(f, 0.0, std::numeric_limits<double>::infinity(), epsabs, epsrel);
 }
 
 double DipoleDM::thermal_cross_section2(double x) const {
@@ -840,7 +836,7 @@ double DipoleDM::thermal_cross_section2(double x) const {
     double abserr;
     int neval, ier;
     // Perform outter integral
-    return qagi(f, 1.0, 1, epsabs, epsrel, &abserr, &neval, &ier);
+    return Quad<double>::integrate(f, 1.0, std::numeric_limits<double>::infinity(), epsabs, epsrel);
 }
 
 /*
@@ -861,7 +857,7 @@ ODESolution DipoleDM::solve_boltzmann(
     DipoleDMBoltzmann boltz{std::make_shared<DipoleDM>(*this)};
     double Tinit = m_m1 / exp(logx_span.first);
 
-    diffeq::Vector<double> winit{1};
+    Vector<double> winit{1};
     winit(0) = log(boltz.x1.neq(Tinit) / sm_entropy_density(Tinit));
 
     ODEProblem problem{std::make_shared<DipoleDMBoltzmann>(boltz), winit, logx_span};
@@ -911,7 +907,7 @@ ODESolution DipoleDM::solve_temperature(
     DipoleDMBoltzmannTemp boltz{std::make_shared<DipoleDM>(*this)};
     double Tinit = m_m1 / exp(logx_span.first);
 
-    diffeq::Vector<double> yinit{1};
+    Vector<double> yinit{1};
     // Assume that DM is in kinetic equillibrium to start
     yinit(0) = 1.73216203306263 * m_m1 * pow(sm_heff(Tinit), -2.0 / 3.0) / Tinit;
 

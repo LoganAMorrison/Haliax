@@ -6,7 +6,7 @@
 #define LANRE_GAMMA_RAY_SPECTRA_MUON_HPP
 
 #include "lanre/constants.hpp"
-#include "lanre/integrate/qagp.hpp"
+#include "lanre/integrate/quad.hpp"
 #include <cmath>
 #include <vector>
 
@@ -86,7 +86,7 @@ static double integrand(double cl, double egam, double emu) {
  * @return
  */
 double decay_spectrum_muon(double egam, double emu) {
-    using lanre::integrate::qagp;
+    using lanre::integrate::Quad;
     if (emu < kMUON_MASS) {
         return 0.0;
     } else if (emu == kMUON_MASS) {
@@ -101,10 +101,7 @@ double decay_spectrum_muon(double egam, double emu) {
                 return integrand(cl, egam, emu);
             };
             std::vector<double> pts = {-1.0, 1.0};
-            double abserr;
-            int neval;
-            int ier;
-            return qagp(f, -1.0, 1.0, pts.size(), pts.data(), 1e-10, 1e-4, &abserr, &neval, &ier);
+            return Quad<double>::integrate(f, -1.0, 1.0, pts, 1e-10, 1e-4);
         } else {
             return 0.0;
         }

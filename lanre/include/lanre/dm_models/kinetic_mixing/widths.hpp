@@ -6,6 +6,7 @@
 #define LANRE_KINETIC_MIXING_WIDTHS_HPP
 
 #include "lanre/dm_models/kinetic_mixing/parameters.hpp"
+#include <cmath>
 
 namespace lanre {
 namespace dm_models {

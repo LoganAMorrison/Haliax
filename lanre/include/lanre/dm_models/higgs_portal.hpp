@@ -753,7 +753,7 @@ double HiggsPortal::relic_density(
     HiggsPortalBoltzmann boltz{std::make_shared<HiggsPortal>(*this)};
     double Tinit = boltz.chi.get_mass() / exp(logx_span.first);
 
-    diffeq::Vector<double> winit{1};
+    Vector<double> winit{1};
     winit(0) = log(boltz.chi.neq(Tinit) / sm_entropy_density(Tinit));
 
     ODEProblem problem{std::make_shared<HiggsPortalBoltzmann>(boltz), winit, logx_span};

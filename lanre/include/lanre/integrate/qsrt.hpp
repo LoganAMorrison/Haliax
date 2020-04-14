@@ -36,83 +36,58 @@ namespace integrate {
  *             k = limit+1-last otherwise
  * @param nrmax maxerr = iord(nrmax)
  */
-template<size_t Limit>
-void qsrt(
-        int last,
-        int *maxerr,
-        double *ermax,
-        const std::array<double, Limit> &elist,
-        std::array<int, Limit> &iord,
-        int *nrmax
-) {
-    int i, ibeg, ido, isucc, j, jbnd, jupbn, k;
+void qsrt(int limit, int last, int *maxerr, double *ermax, double elist[],
+          int iord[], int *nrmax) {
     double errmax, errmin;
+    int i, ibeg, ido, isucc, j, jbnd, jupbn, k;
 
-
-    if (last > 2) goto _10;
-    iord[0] = 1;
-    iord[1] = 2;
+    if (last > 1) goto _10;
+    iord[0] = 0;
+    iord[1] = 1;
     goto _90;
-
-    // this part of the routine is only executed if, due to a
-    // difficult integrand, subdivision increased the error
-    // estimate. in the normal case the insert procedure should
-    // start after the nrmax-th largest error estimate.
     _10:
-    errmax = elist[*maxerr - 1];
-    if (*nrmax == 1) goto _30;
-    ido = *nrmax - 1;
-    for (i = 1; i <= ido; i++) {
-        isucc = iord[*nrmax - 2];
-        if (errmax <= elist[isucc - 1]) goto _30;
-        iord[*nrmax - 1] = isucc;
-        nrmax = nrmax - 1;
+    errmax = elist[*maxerr];
+    if (*nrmax == 0) goto _30;
+    ido = (*nrmax) - 1;
+    for (i = 0; i <= ido; i++) {
+        isucc = iord[*nrmax - 1];
+        if (errmax <= elist[isucc]) goto _30;
+        iord[*nrmax] = isucc;
+        (*nrmax)--;
     }
-
-    // compute the number of elements in the list to be maintained
-    // in descending order. this number depends on the number of
-    // subdivisions still allowed.
     _30:
     jupbn = last;
-    if (last > (Limit / 2 + 2)) jupbn = Limit + 3 - last;
-    errmin = elist[last - 1];
-
-    // insert errmax by traversing the list top-down,
-    // starting comparison from the element elist(iord(nrmax+1)).
+    if (last > (limit / 2 + 2))
+        jupbn = limit + 3 - last;
+    errmin = elist[last];
     jbnd = jupbn - 1;
     ibeg = *nrmax + 1;
     if (ibeg > jbnd) goto _50;
     for (i = ibeg; i <= jbnd; i++) {
-        isucc = iord[i - 1];
-        if (errmax < elist[isucc - 1]) goto _60;
-        iord[i - 2] = isucc;
+        isucc = iord[i];
+        if (errmax >= elist[isucc]) goto _60;
+        iord[i - 1] = isucc;
     }
-
     _50:
-    iord[jbnd - 1] = *maxerr;
-    iord[jupbn - 1] = last;
+    iord[jbnd] = *maxerr;
+    iord[jupbn] = last;
     goto _90;
-
-    // insert errmin by traversing the list bottom-up.
     _60:
-    iord[i - 2] = *maxerr;
+    iord[i - 1] = *maxerr;
     k = jbnd;
     for (j = i; j <= jbnd; j++) {
-        isucc = iord[k - 1];
-        if (errmin < elist[isucc - 1]) goto _80;
-        iord[k] = isucc;
-        k = k - 1;
+        isucc = iord[k];
+        if (errmin < elist[isucc]) goto _80;
+        iord[k + 1] = isucc;
+        k--;
     }
-    iord[i - 1] = last;
+    iord[i] = last;
     goto _90;
-
     _80:
-    iord[k] = last;
-
-    // set maxerr and ermax.
+    iord[k + 1] = last;
     _90:
-    *maxerr = iord[*nrmax - 1];
-    *ermax = elist[*maxerr - 1];
+    *maxerr = iord[*nrmax];
+    *ermax = elist[*maxerr];
 }
 
 }

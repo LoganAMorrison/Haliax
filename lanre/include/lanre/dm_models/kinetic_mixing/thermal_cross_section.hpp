@@ -8,8 +8,8 @@
 #include "lanre/dm_models/kinetic_mixing/parameters.hpp"
 #include "lanre/dm_models/kinetic_mixing/cross_sections.hpp"
 #include "lanre/special_functions/besselk.hpp"
-#include "lanre/integrate/qagi.hpp"
-#include "lanre/integrate/qagp.hpp"
+#include "lanre/integrate/quad.hpp"
+#include <cmath>
 
 namespace lanre {
 namespace dm_models {
@@ -23,8 +23,7 @@ double thermal_cross_section(
 ) {
     using special_functions::besselk1e;
     using special_functions::besselk2e;
-    using integrate::qagi;
-    using integrate::qagp;
+    using integrate::Quad;
 
     const double denom = 2.0 * besselk2e(x);
     const double pf = x / (denom * denom);
@@ -33,86 +32,55 @@ double thermal_cross_section(
         const double z2 = z * z;
         const double sig = annihilation_cross_section(params, params.mx * z, state, channel);
         const double kernal = z2 * (z2 - 4.0) * besselk1e(x * z) * exp(-x * (z - 2.0));
+        if (isnan(sig) || isnan(kernal)) {
+            // TODO: Fix this... Cross section returns NAN for large z.
+            return 0.0;//sig * kernal;
+        }
         return sig * kernal;
     };
     double int_resonance = 0.0;
     double int_threshold = 0.0;
     double int_infinity;
 
-    double epsabs = 1e-8;
-    double epsrel = 1e-5;
-    double abserr;
-    int neval, ier;
-    double bound;
-    int inf = 1;
+    double abstol = 1e-8;
+    double reltol = 1e-3;
+    double error;
+    double lb;
+    int ier;
 
     double zmin = 2.0;
     double resonance_loc = params.mv / params.mx;
     double threshold_loc = 2.0 * params.mv / params.mx;
 
-    // Resoance: sqrt(s) = mv = z * mx => z = mv / mx > 2 => mv > 2mx > mx
-    // Resoance: sqrt(s) = 2mv = z * mx => z = 2mv / mx > 2 => mv > mx
+    // Resonance: sqrt(s) = mv = z * mx => z = mv / mx > 2 => mv > 2mx > mx
+    // Threshold: sqrt(s) = 2mv = z * mx => z = 2mv / mx > 2 => mv > mx
 
-    std::vector<double> sing_pts(2);
     if (params.mx < params.mv) { // Have resonance
         if (2.0 * params.mx < params.mv) { // Have threshold
-            bound = threshold_loc;
-
-            sing_pts[0] = zmin;
-            sing_pts[1] = resonance_loc;
-            int_resonance = qagp(
-                    integrand,
-                    sing_pts[0],
-                    sing_pts[1],
-                    sing_pts.size(),
-                    sing_pts.data(),
-                    epsabs,
-                    epsrel,
-                    &abserr,
-                    &neval,
-                    &ier
-            );
-
-            sing_pts[0] = resonance_loc;
-            sing_pts[1] = threshold_loc;
-            int_threshold = qagp(
-                    integrand,
-                    sing_pts[0],
-                    sing_pts[1],
-                    sing_pts.size(),
-                    sing_pts.data(),
-                    epsabs,
-                    epsrel,
-                    &abserr,
-                    &neval,
-                    &ier
-            );
+            lb = threshold_loc;
+            int_resonance = Quad<double>::integrate(integrand, zmin, resonance_loc, abstol, reltol, 500, &error);
+            int_threshold = Quad<double>::integrate(integrand, resonance_loc, threshold_loc, abstol, reltol, 500,
+                                                    &error);
         } else { // No threshold
-            bound = params.mv / params.mx;
-
-            sing_pts[0] = zmin;
-            sing_pts[1] = resonance_loc;
-
-            int_resonance = qagp(
-                    integrand,
-                    sing_pts[0],
-                    sing_pts[1],
-                    sing_pts.size(),
-                    sing_pts.data(),
-                    epsabs,
-                    epsrel,
-                    &abserr,
-                    &neval,
-                    &ier
-            );
+            lb = resonance_loc;
+            int_resonance = Quad<double>::integrate(integrand, zmin, resonance_loc, abstol, reltol, 500, &error);
         }
     } else {// No resonance or threshold
-        bound = 2.0;
+        lb = 2.0;
     }
 
     // Perform the integral from the bound to infinity
     // bound is either 2, resonance_loc or threshold_loc
-    int_infinity = qagi(integrand, bound, inf, epsabs, epsrel, &abserr, &neval, &ier);
+    int_infinity = Quad<double>::integrate(
+            integrand,
+            lb,
+            std::numeric_limits<double>::infinity(),
+            abstol,
+            reltol,
+            500,
+            &error,
+            &ier
+    );
 
     return pf * (int_infinity + int_threshold + int_resonance);
 }

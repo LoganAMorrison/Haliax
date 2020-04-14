@@ -8,6 +8,7 @@
 #include "lanre/dm_models/kinetic_mixing/parameters.hpp"
 #include "lanre/constants.hpp"
 #include <string>
+#include <cmath>
 
 namespace lanre {
 namespace dm_models {
@@ -111,7 +112,7 @@ double sigma_xx_to_nunu(
         double Q,
         const std::string &channel
 ) {
-    if (channel != "s" && channel != "all") {
+    if ((channel != "s" && channel != "all") || Q <= 2 * params.mx) {
         return 0.0;
     }
     double temp1 = pow(Q, 2);

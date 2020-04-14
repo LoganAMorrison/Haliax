@@ -8,11 +8,11 @@
 namespace lanre {
 namespace integrate {
 
-double dqwgtc(double x, double c, double p2, double p3, double p4, int kp) {
+double qwgtc(double x, double c, double p2, double p3, double p4, int kp) {
     return 1.0 / (x - c);
 }
 
-double dqwgto(double x, double omega, double p2, double p3, double p4, int wgtfunc) {
+double qwgto(double x, double omega, double p2, double p3, double p4, int wgtfunc) {
     double omx;
 
     omx = omega * x;
@@ -22,7 +22,7 @@ double dqwgto(double x, double omega, double p2, double p3, double p4, int wgtfu
         return sin(omx);
 }
 
-double dqwgts(double x, double a, double b, double alpha, double beta, int wgtfunc) {
+double qwgts(double x, double a, double b, double alpha, double beta, int wgtfunc) {
     double bmx, xma, result;
 
     xma = x - a;

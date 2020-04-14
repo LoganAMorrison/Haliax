@@ -25,7 +25,49 @@ TEST_F(KineticMixingTest, Widths) {
 }
 
 TEST_F(KineticMixingTest, CrossSections) {
+    std::vector<double> Qs = {0.01, 0.1, 1.0, 10.0, 100.0, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9};
+    for (auto Q: Qs) {
+        double tcs = km1.annihilation_cross_section(Q, "all", "all");
+        std::cout << "Q, cs = " << Q << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto Q: Qs) {
+        double tcs = km2.annihilation_cross_section(Q, "all", "all");
+        std::cout << "Q, cs = " << Q << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto Q: Qs) {
+        double tcs = km3.annihilation_cross_section(Q, "all", "all");
+        std::cout << "Q, cs = " << Q << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto Q: Qs) {
+        double tcs = km4.annihilation_cross_section(Q, "all", "all");
+        std::cout << "Q, cs = " << Q << ", " << tcs << "\n";
+    }
+}
 
+TEST_F(KineticMixingTest, ThermalCrossSections) {
+    std::vector<double> xs = {0.01, 0.1, 1.0, 10.0, 100.0};
+    for (auto x: xs) {
+        double tcs = km1.thermal_cross_section(x, "all", "all");
+        std::cout << "x, tcs = " << x << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto x: xs) {
+        double tcs = km2.thermal_cross_section(x, "all", "all");
+        std::cout << "x, tcs = " << x << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto x: xs) {
+        double tcs = km3.thermal_cross_section(x, "all", "all");
+        std::cout << "x, tcs = " << x << ", " << tcs << "\n";
+    }
+    std::cout << "\n";
+    for (auto x: xs) {
+        double tcs = km4.thermal_cross_section(x, "all", "all");
+        std::cout << "x, tcs = " << x << ", " << tcs << "\n";
+    }
 }
 
 TEST_F(KineticMixingTest, RelicDensity) {

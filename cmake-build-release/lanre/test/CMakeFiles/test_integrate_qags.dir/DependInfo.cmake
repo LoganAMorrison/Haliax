@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_integrate_qags.cpp" "/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.o"
+  "/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_integrate_quad.cpp" "/Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release/lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_quad.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

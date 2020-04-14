@@ -691,7 +691,7 @@ void DarkSUN::solve_boltzmann(
 
     auto logx_span = std::make_pair(std::log(xstart), std::log(xfinal));
 
-    diffeq::Vector<double> winit{2};
+    Vector<double> winit{2};
     winit(0) = w_eta_init;
     winit(1) = y_delta_init;
 

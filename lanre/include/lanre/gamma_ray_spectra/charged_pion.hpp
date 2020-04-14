@@ -7,7 +7,7 @@
 
 #include "lanre/constants.hpp"
 #include "lanre/gamma_ray_spectra/muon.hpp"
-#include "lanre/integrate/qagp.hpp"
+#include "lanre/integrate/quad.hpp"
 #include "lanre/interpolate/univariate_spline.hpp"
 #include <vector>
 
@@ -153,7 +153,7 @@ double decay_spectrum_charged_pion_integrand(double cl, double egam, double epi,
 }
 
 double decay_spectrum_charged_pion(double egam, double epi, const std::string &mode) {
-    using integrate::qagp;
+    using integrate::Quad;
     if (epi < kCHARGED_PION_MASS) {
         return 0.0;
     }
@@ -166,7 +166,7 @@ double decay_spectrum_charged_pion(double egam, double epi, const std::string &m
     double abserr;
     int neval;
     int ier;
-    return qagp(f, -1.0, 1.0, pts.size(), pts.data(), 1e-10, 1e-4, &abserr, &neval, &ier);
+    return Quad<double>::integrate(f, -1.0, 1.0, pts, 1e-10, 1e-4, 500, &abserr);
 }
 
 std::vector<double> decay_spectrum_charged_pion(

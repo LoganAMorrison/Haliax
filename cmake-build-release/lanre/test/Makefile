@@ -786,32 +786,32 @@ test_higgs_portal.cpp.s:
 	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_higgs_portal.dir/build.make lanre/test/CMakeFiles/test_higgs_portal.dir/test_higgs_portal.cpp.s
 .PHONY : test_higgs_portal.cpp.s
 
-test_integrate_qags.o: test_integrate_qags.cpp.o
+test_integrate_quad.o: test_integrate_quad.cpp.o
 
-.PHONY : test_integrate_qags.o
+.PHONY : test_integrate_quad.o
 
 # target to build an object file
-test_integrate_qags.cpp.o:
-	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.o
-.PHONY : test_integrate_qags.cpp.o
+test_integrate_quad.cpp.o:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_quad.cpp.o
+.PHONY : test_integrate_quad.cpp.o
 
-test_integrate_qags.i: test_integrate_qags.cpp.i
+test_integrate_quad.i: test_integrate_quad.cpp.i
 
-.PHONY : test_integrate_qags.i
+.PHONY : test_integrate_quad.i
 
 # target to preprocess a source file
-test_integrate_qags.cpp.i:
-	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.i
-.PHONY : test_integrate_qags.cpp.i
+test_integrate_quad.cpp.i:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_quad.cpp.i
+.PHONY : test_integrate_quad.cpp.i
 
-test_integrate_qags.s: test_integrate_qags.cpp.s
+test_integrate_quad.s: test_integrate_quad.cpp.s
 
-.PHONY : test_integrate_qags.s
+.PHONY : test_integrate_quad.s
 
 # target to generate assembly for a file
-test_integrate_qags.cpp.s:
-	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_qags.cpp.s
-.PHONY : test_integrate_qags.cpp.s
+test_integrate_quad.cpp.s:
+	cd /Users/loganmorrison/Documents/git_hub/Haliax/cmake-build-release && $(MAKE) -f lanre/test/CMakeFiles/test_integrate_qags.dir/build.make lanre/test/CMakeFiles/test_integrate_qags.dir/test_integrate_quad.cpp.s
+.PHONY : test_integrate_quad.cpp.s
 
 test_integrate_vegas.o: test_integrate_vegas.cpp.o
 
@@ -1150,9 +1150,9 @@ help:
 	@echo "... test_higgs_portal.o"
 	@echo "... test_higgs_portal.i"
 	@echo "... test_higgs_portal.s"
-	@echo "... test_integrate_qags.o"
-	@echo "... test_integrate_qags.i"
-	@echo "... test_integrate_qags.s"
+	@echo "... test_integrate_quad.o"
+	@echo "... test_integrate_quad.i"
+	@echo "... test_integrate_quad.s"
 	@echo "... test_integrate_vegas.o"
 	@echo "... test_integrate_vegas.i"
 	@echo "... test_integrate_vegas.s"

@@ -198,7 +198,7 @@ target_link_libraries(test_integrate_vegas PUBLIC
 set_target_properties(test_integrate_vegas PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}../../bin)
 
-add_executable(test_integrate_qags test_integrate_qags.cpp)
+add_executable(test_integrate_qags test_integrate_quad.cpp)
 target_link_libraries(test_integrate_qags PUBLIC
         lanre
         gtest_main

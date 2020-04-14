@@ -1979,7 +1979,7 @@
 		<Unit filename="/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_higgs_portal.cpp">
 			<Option target="test_higgs_portal"/>
 		</Unit>
-		<Unit filename="/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_integrate_qags.cpp">
+		<Unit filename="/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_integrate_quad.cpp">
 			<Option target="test_integrate_qags"/>
 		</Unit>
 		<Unit filename="/Users/loganmorrison/Documents/git_hub/Haliax/lanre/test/test_integrate_vegas.cpp">

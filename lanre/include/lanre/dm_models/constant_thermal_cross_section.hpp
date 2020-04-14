@@ -108,7 +108,7 @@ double ConstantThermalCrossSection::relic_density(
     ConstantThermalCrossSectionBoltzmann boltz{std::make_shared<ConstantThermalCrossSection>(*this)};
     double Tinit = boltz.chi.get_mass() / xstart;
 
-    diffeq::Vector<double> winit{1};
+    Vector<double> winit{1};
     winit(0) = log(boltz.chi.neq(Tinit) / sm_entropy_density(Tinit));
 
     ODEProblem problem{std::make_shared<ConstantThermalCrossSectionBoltzmann>(boltz), winit, logx_span};

@@ -15,6 +15,7 @@
 #include <boost/math/quadrature/gauss_kronrod.hpp>
 #include <boost/math/tools/roots.hpp>
 #include <boost/math/differentiation/finite_difference.hpp>
+#include <cmath>
 
 namespace lanre {
 namespace dm_models {

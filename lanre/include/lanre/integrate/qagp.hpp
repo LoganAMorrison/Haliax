@@ -49,22 +49,21 @@ namespace integrate {
  */
 template<class Integrand>
 double qagp(Integrand f, double a, double b, int npts2, const double *points,
-            double epsabs, double epsrel, double *abserr, int *neval, int *ier) {
-    double abseps, alist[kLIMIT], area, area1, area12, area2;
-    double a1, a2, blist[kLIMIT], b1, b2, correc, defabs, defab1;
-    double defab2, dres, elist[kLIMIT], erlarg, erlast, errbnd;
+            double epsabs, double epsrel, double *abserr, int *neval, int *ier, size_t t_limit) {
+    double abseps, alist[t_limit], area, area1, area12, area2;
+    double a1, a2, blist[t_limit], b1, b2, correc, defabs, defab1;
+    double defab2, dres, elist[t_limit], erlarg, erlast, errbnd;
     double errmax, error1, error2, erro12, errsum, ertest, ndin[40];
     double pts[40], resa, resabs, reseps, result, res3la[3];
-    double rlist[kLIMIT], rlist2[52], sign, temp;
+    double rlist[t_limit], rlist2[52], sign, temp;
 
-    int i, id, ierro, ind1, ind2, ip1, iord[kLIMIT], iroff1, iroff2, iroff3;
-    int j, jlow, jupbnd, k, ksgn, ktmin, last, levcur, level[kLIMIT], levmax;
-    int maxerr, nint, nintp1, npts, nres, nrmax, numrl2, limit;
-    bool extrap, noext;
+    int i, id, ierro, ind1, ind2, ip1, iord[t_limit], iroff1, iroff2, iroff3;
+    int j, jlow, jupbnd, k, ksgn, ktmin, last, levcur, level[t_limit], levmax;
+    int maxerr, nint, nintp1, npts, nres, nrmax, numrl2, limit, extrap, noext;
 
-    limit = kLIMIT - 1;
+    limit = t_limit - 1;
 
-/* Test validity of parameters. */
+    /* Test validity of parameters. */
     *ier = 0;
     *neval = 0;
     last = 0;
@@ -82,14 +81,14 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         *ier = 6;
     if (*ier == 6) goto _999;
 
-/* If any break points are provided, sort them into an ascending sequence. */
+    /* If any break points are provided, sort them into an ascending sequence. */
     sign = (a < b) ? 1.0 : -1.0;
-    pts[0] = fmin(a, b);
+    pts[0] = std::min(a, b);
     if (npts == 0) goto _15;
     for (i = 0; i < npts; i++)
         pts[i + 1] = points[i];
     _15:
-    pts[npts + 1] = fmax(a, b);
+    pts[npts + 1] = std::max(a, b);
     nint = npts + 1;
     a1 = pts[0];
     if (npts == 0) goto _40;
@@ -105,12 +104,12 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
             _20:;
         }
     }
-    if ((pts[0] != fmin(a, b)) || (pts[nintp1 - 1] != fmax(a, b)))
+    if ((pts[0] != std::min(a, b)) || (pts[nintp1 - 1] != std::max(a, b)))
         *ier = 6;
     if (*ier == 6)
         goto _999;
 
-/* Compute first integral and error approximations. */
+    /* Compute first integral and error approximations. */
     _40:
     resabs = 0.0;
     for (i = 0; i < nint; i++) {
@@ -137,11 +136,11 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         errsum += elist[i];
     }
 
-/* Test on accuracy. */
-/*      last = nint; */
+    /* Test on accuracy. */
+    /*      last = nint; */
     *neval = 21 * nint;
     dres = fabs(result);
-    errbnd = fmax(epsabs, epsrel * dres);
+    errbnd = std::max(epsabs, epsrel * dres);
     if ((*abserr <= 100.0 * kEPMACH * resabs) && (*abserr > errbnd))
         *ier = 2;
     if (nint == 0)
@@ -169,7 +168,7 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
     if ((*ier != 0) || (*abserr <= errbnd))
         goto _999;
 
-    /* Initialization. */
+/* Initialization. */
     res3la[0] = 0.0;
     res3la[1] = 0.0;
     res3la[2] = 0.0;
@@ -209,7 +208,7 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         area1 = qk21(f, a1, b1, &error1, &resa, &defab1);
         area2 = qk21(f, a2, b2, &error2, &resa, &defab2);
         /* Improve previous approximations to integral and error
-         * and test for accuracy. */
+        and test for accuracy. */
         *neval += 42;
         area12 = area1 + area2;
         erro12 = error1 + error2;
@@ -229,7 +228,7 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         level[last] = levcur;
         rlist[maxerr] = area1;
         rlist[last] = area2;
-        errbnd = fmax(epsabs, epsrel * fabs(area));
+        errbnd = std::max(epsabs, epsrel * fabs(area));
 
         /* Test for roundoff error and eventually set error flag. */
         if (((iroff1 + iroff2) >= 10) || (iroff3 >= 20))
@@ -237,18 +236,18 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         if (iroff2 > 5)
             *ier = 3;
 
-/* Set error flag in the case that the number of subintervals
-    equals limit. */
+        /* Set error flag in the case that the number of subintervals
+            equals limit. */
         if (last == limit)    /* last == limit */
             *ier = 1;
 
-/* Set error flag in the case of bad integrand behavior at some
-    points in the integration range. */
-        if (fmax(fabs(a1), fabs(b2)) <= (1.0 + 1000.0 * kEPMACH) *
+        /* Set error flag in the case of bad integrand behavior at some
+            points in the integration range. */
+        if (std::max(fabs(a1), fabs(b2)) <= (1.0 + 1000.0 * kEPMACH) *
                 (fabs(a2) + 1000.0 * kUFLOW))
             *ier = 4;
 
-/* Append the newly-created intervals to the list. */
+        /* Append the newly-created intervals to the list. */
         if (error2 > error1) goto _100;
         alist[last] = a2;
         blist[maxerr] = b1;
@@ -265,11 +264,11 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         elist[maxerr] = error2;
         elist[last] = error1;
 
-    /* Call qsrt to maintain the descending ordering in the list of error
-        estimates and select the subinterval with nrmax-th largest
-        error estimate (to be bisected next). */
+        /* Call qsrt to maintain the descending ordering in the list of error
+            estimates and select the subinterval with nrmax-th largest
+            error estimate (to be bisected next). */
         _110:
-        qsrt(limit, last, maxerr, errmax, elist, iord, nrmax);
+        qsrt(limit, last, &maxerr, &errmax, elist, iord, &nrmax);
         if (errsum <= errbnd) goto _190;
         if (*ier != 0) goto _170;
         if (noext) goto _160;
@@ -286,8 +285,8 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         _120:
         if ((ierro == 3) || (erlarg <= ertest)) goto _140;
 
-/* The smallest interval has the largest error. Before bisecting, decrease
-    the sum of the errors over the larger intervals (erlarg) and
+        /* The smallest interval has the largest error. Before bisecting, decrease
+        the sum of the errors over the larger intervals (erlarg) and
         perform extrapolation.) */
         id = nrmax;
         jupbnd = last;
@@ -301,7 +300,7 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
             nrmax++;
         }
 
-/* Perform extrapolation. */
+        /* Perform extrapolation. */
         _140:
         numrl2++;
         rlist2[numrl2] = area;
@@ -314,10 +313,10 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
         *abserr = abseps;
         result = reseps;
         correc = erlarg;
-        ertest = fmax(epsabs, epsrel * fabs(reseps));
+        ertest = std::max(epsabs, epsrel * fabs(reseps));
         if (*abserr <= ertest) goto _170;
 
-/* Prepare bisection of the smallest interval. */
+        /* Prepare bisection of the smallest interval. */
         _150:
         if (numrl2 == 0) noext = true;
         if (*ier == 5) goto _170;
@@ -342,16 +341,16 @@ double qagp(Integrand f, double a, double b, int npts2, const double *points,
     _175:
     if (*abserr / fabs(result) > errsum / fabs(area)) goto _190;
 
-/* Test on divergence. */
+    /* Test on divergence. */
     _180:
-    if ((ksgn == -1) && (fmax(fabs(result), fabs(area)) <= defabs * .01))
+    if ((ksgn == -1) && (std::max(fabs(result), fabs(area)) <= defabs * .01))
         goto _210;
     if ((0.01 > result / area) || (result / area > 100.0) ||
             (errsum > fabs(area)))
         *ier = 6;
     goto _210;
 
-/* Compute global integral. */
+    /* Compute global integral. */
     _190:
     result = 0.0;
     for (k = 0; k <= last; k++)

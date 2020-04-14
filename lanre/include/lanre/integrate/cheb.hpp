@@ -31,12 +31,7 @@ namespace integrate {
  * @param cheb24 vector of dimension 25 containing the
  *               chebyshev coefficients for degree 24
  */
-void dqcheb(
-        const std::array<double, 11> &x,
-        std::array<double, 25> &fval,
-        std::array<double, 13> &cheb12,
-        std::array<double, 25> &cheb24
-) {
+void qcheb(double x[], double fval[], double cheb12[], double cheb24[]) {
     std::array<double, 12> v = {0};
 
     for (int i = 0; i < 12; i++) {
